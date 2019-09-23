@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 
 function SecurityCosts(){
-    const [foodCost, setFoodCost]=useState(0);
+    const [securityCost, setSecurityCost]=useState(0);
     return(
         <Form>
             <div className='Security-Costs'>
