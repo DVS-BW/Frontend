@@ -21,6 +21,8 @@ function FoodCosts(){
             type='text'
             className='DineOut'
             placeholder='Monthly Dining Cost'>Dine Out Cost:</Field>
+
+            <button type='submit'>Next</button>
         </Form>
     )
 }
