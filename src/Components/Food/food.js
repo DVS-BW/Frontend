@@ -8,51 +8,73 @@ const DVtheme = {
     third:'#2D182E',
 }
 
-const label=styled.label`
-font-family:sans-serif, serif;
-color:#b865b8;
-font-size:2.5rem;
+const Button =styled.button`
+    font-family:sans-serif;
+    font-size: 1.5rem;
+    border:#2D182E;
+    border-radius:25px;
+    background: ${props => props.secondary};
+    color: ${props=>props.third};
+`
+const DIVwrapper= styled.FoodCosts`
+    font-family:sans-serif;
+    font-size:2rem;
+    border:none;
+    background:${props => props.secondary};
+    color:${props => props.third};
 
 `
 
+const FoodCosts = props => {
+    const [foodCosts, setFoodCosts]=useState({});
+    console.log(foodCosts);
 
-function FoodCosts(){
-    const [foodCosts, setFoodCosts]=useState(0);
+    const changeHandler = event =>{
+        console.log(event.target.value);
+        setFoodCosts({...foodCosts, [event.target.name]:parseFloat(event.target.value)
+        })}
+
     return(
-        <ThemeProvider theme={DVtheme}>
+        <Formik>
+            <ThemeProvider theme={DVtheme}>
         <Form>
-            <div className='Food-Costs'>
+            <DIVwrapper primary className='FoodCosts'>
                 <h4>Food Expenses</h4>
                 <div className='Food-Form'>
                 <label> Monthly Food Expenses:
                     <Field
                     type='text'
                     className='Monthly-costs'
-                    name='Monthly-Costs'
-                    placeholder='$ Ongoing Monthly Expense'/>
+                    name='Monthly_Costs'
+                    placeholder='$ Ongoing Monthly Expense'
+                    value={foodCosts.monthly_Costs}
+                    onChange={changeHandler}/>
                 </label>
 
                 <label>One Time Stock Up Expense:
                     <Field
                     type='text'
                     className='Stock-up'
-                    placeholder='$ One time cost to stock up'/>
+                    name='Stock_up'
+                    placeholder='$ One time cost to stock up'
+                    value={foodCosts.Stock_up}
+                    onChange={changeHandler}/>
                 </label>
 
                 <label>Dine Out Expense:
                     <Field
                     type='text'
                     className='DineOut'
-                    placeholder='Monthly Dining Cost'/>
-                </label>
-
-                <button type='submit' className='submitBTN'>Next</button>
-                </div> 
-                
-            </div>
+                    name='dineout'
+                    placeholder='Monthly Dining Cost'
+                    value={foodCosts.dineout}
+                    onChange={changeHandler}/>
+                </label>     
+            </DIVwrapper>
             
         </Form>
         </ThemeProvider>
+        </Formik>
     )
 }
 

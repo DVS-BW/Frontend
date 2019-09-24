@@ -3,7 +3,26 @@ import {Form, Field, withFormik, Formik} from 'formik';
 import * as Yup from 'yup';
 // import {calcDebtAC} from '../../actions';
 
+const DVtheme = {
+    primary:'#800080',
+    secondary:'white',
+    third:'#2D182E',
+}
 
+const Button =styled.button`
+    font-family:sans-serif;
+    font-size: 1.5rem;
+    border:#2D182E;
+    border-radius:25px;
+    background: ${props => props.secondary};
+    color: ${props=>props.third};
+`
+const DIVwrapper= styled.FoodCosts`
+    font-family:sans-serif;
+    font-size:2rem;
+    border:none;
+    background:${props => props.secondary};
+    color:${props => props.third};`
 
 const SecurityCosts = props => {
 
