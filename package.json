@@ -8,17 +8,12 @@
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
- ZB-HealthandFooter
-    
-=======
+
     "react-redux": "^7.1.1",
     "react-scripts": "3.1.2",
     "redux": "^4.0.4",
-<<<<<<< HEAD
+
     "styled-components": "^4.4.0",
-=======
- master
->>>>>>> bc45a9422825e45b7c84593c707d7d5a9ec0db34
     "yup": "^0.27.0"
   },
   "scripts": {
