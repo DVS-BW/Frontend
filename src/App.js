@@ -12,7 +12,14 @@ import SecurityCosts from './components/Security/security';
 
 // import Footer from './components/Footer/footer';
 
-function App() {
+
+const App = props => {
+  
+  const submitHandler = (e, securityCost) => {
+    e.preventDefault();
+    props.calcDebtAC(securityCost);
+  }
+
   return (
     <div className="App">
       {/* <Header /> */}
@@ -21,7 +28,14 @@ function App() {
       {/* <Debt /> */}
       {/* <Food /> */}
       {/* <Health /> */}
-      <SecurityCosts />
+
+      <SecurityCosts calcDebtAC={props.calcDebtAC} 
+      submitHandler={submitHandler} />
+
+    <div>
+      {/* <h1>Total cost is ${props.totalCost}.</h1>
+      <div>{props.obj.monthly_security} {props.obj.phone_change}</div> */}
+    </div>
 
       {/* <Footer /> */}
     </div>
@@ -31,8 +45,8 @@ function App() {
 //Helper function that tells connector (below) which pieces of state we need.
 const mapStateToProps = state => {
   return {
-    totalCost: state.totalCost
-    // INCLUDE THE REST OF THE USER TOTALS HERE AS PROPS
+    totalCost: state.totalCost,
+    obj: state.security
   }
 }
 
