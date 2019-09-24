@@ -39,7 +39,7 @@ const SecurityCosts = props => {
         <Formik>
         <Form onSubmit={(e) => {props.submitHandler(e, securityCost)}}>
 
-            <div className='Security-Costs'>
+            <DIVwrapper className='Security-Costs'>
                 <h4>Security Expenses</h4>
                 <div className='Security-Form'>
 
@@ -83,10 +83,10 @@ const SecurityCosts = props => {
                         onChange={changeHandler}/>
                     </label>
 
-                    <button type='submit' className='submitBTN'>Next</button>
+                    <Button type='submit' className='submitBTN'>Next</Button>
                 </div>
                 
-            </div>
+            </DIVwrapper>
             
         </Form>
         </Formik>
