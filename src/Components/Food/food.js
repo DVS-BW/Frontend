@@ -2,6 +2,11 @@ import React from 'react';
 import Formik, {Form, Field, withFormik} from 'formik';
 import * as Yup from 'yup';
 
+const label=styled.label`
+font-family:sans-serif, serif;
+color:#b865b8;
+`
+
 
 function FoodCosts(){
     const [foodCosts, setFoodCosts]=useState(0);
