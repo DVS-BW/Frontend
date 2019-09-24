@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Form, Field, withFormik } from 'formik';
+import { Form, Field, withFormik, Formik } from 'formik';
 import * as Yup from 'yup';
 
 function HealthCosts() {
     const [healthCost, setHealthCost] = useState(0);
 
     return (
+        <Formik>
         <Form>
             <div className='Health-Costs'>
                 <h4>Health Expenses</h4>
@@ -42,6 +43,7 @@ function HealthCosts() {
                 </div>
             </div>
         </Form>
+        </Formik>
     )
 }
 

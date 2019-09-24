@@ -2,13 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './App.scss';
 // import Header from './components/Header/header';
-import Nav from './components/Nav/nav';
+import Nav from './Components/Nav/nav';
 import { calcDebtAC } from './actions';
 
 // import Debt from './components/Debt/debt';
 // import Food from './components/Food/food';
-// import Health from './components/Health/health';
-import SecurityCosts from './components/Security/security';
+ import Health from './Components/Health/health';
+import SecurityCosts from './Components/Security/security';
 
 // import Footer from './components/Footer/footer';
 
@@ -23,7 +23,7 @@ function App() {
 
       {/* <Debt /> */}
       {/* <Food /> */}
-      {/* <Health /> */}
+      <Health /> 
       <SecurityCosts />
 
       {/* <Footer /> */}
