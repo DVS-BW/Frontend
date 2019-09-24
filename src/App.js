@@ -4,6 +4,7 @@ import './App.scss';
 // import Header from './components/Header/header';
 import Nav from './components/Nav/nav';
 import { calcDebtAC } from './actions';
+import reducer from './reducers';
 
 // import Debt from './components/Debt/debt';
 // import Food from './components/Food/food';
@@ -12,7 +13,14 @@ import SecurityCosts from './components/Security/security';
 
 // import Footer from './components/Footer/footer';
 
-function App() {
+
+const App = props => {
+  
+  const submitHandler = (e, securityCost) => {
+    e.preventDefault();
+    props.calcDebtAC(securityCost);
+  }
+
   return (
     <div className="App">
       {/* <Header /> */}
@@ -21,7 +29,13 @@ function App() {
       {/* <Debt /> */}
       {/* <Food /> */}
       {/* <Health /> */}
-      <SecurityCosts />
+
+      <SecurityCosts calcDebtAC={props.calcDebtAC} 
+      submitHandler={submitHandler} />
+
+    <div>
+      <p>Total cost is ${props.totalCost}.</p>
+    </div>
 
       {/* <Footer /> */}
     </div>
