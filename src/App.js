@@ -3,45 +3,49 @@ import {connect} from 'react-redux';
 import './App.scss';
 // import Header from './components/Header/header';
 import Nav from './components/Nav/nav';
-import { calcDebtAC } from './actions';
 
 // import Debt from './components/Debt/debt';
 // import Food from './components/Food/food';
-// import Health from './components/Health/health';
+import HealthCosts from './components/Health/health';
 import SecurityCosts from './components/Security/security';
+import { calcSecurityAC, calcHealthAC } from './actions';
 
 // import Footer from './components/Footer/footer';
 
 
 const App = props => {
   
-  const submitHandler = (e, securityCost) => {
+  //CAN'T COMBINE THESE...MUST MAKE A CONDITIONAL
+  const submitHandler = (e, item) => {
+    console.log('made it to SubmitHandler', item)
     e.preventDefault();
-    props.calcDebtAC(securityCost);
+    if (item.isHealthEditing === true ) {
+      props.calcHealthAC(item);
+    }
+    else if (item.isSecurityEditing === true) {
+      props.calcSecurityAC(item);
+    }
   }
 
   return (
     <div className="App">
- ZB-HealthandFooter
-      
-=======
       {/* <Header /> */}
       <Nav />
 
       {/* <Debt /> */}
       {/* <Food /> */}
-      {/* <Health /> */}
+      <HealthCosts 
+      submitHandler={submitHandler}/>
 
-      <SecurityCosts calcDebtAC={props.calcDebtAC} 
+      <SecurityCosts 
       submitHandler={submitHandler} />
 
     <div>
-      {/* <h1>Total cost is ${props.totalCost}.</h1>
-      <div>{props.obj.monthly_security} {props.obj.phone_change}</div> */}
+      <h1>Total cost is ${props.totalCost}.</h1>
+      {/* <div>{props.obj.monthly_security} {props.obj.phone_change}</div> */}
     </div>
 
       {/* <Footer /> */}
- master
     </div>
   );
 }
@@ -57,5 +61,5 @@ const mapStateToProps = state => {
 //Connect will join this component with the state from Redux.
 export default connect(
   mapStateToProps,
-  {calcDebtAC }
+  {calcSecurityAC, calcHealthAC }
   )(App);
