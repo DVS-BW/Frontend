@@ -10,21 +10,27 @@ function FoodCosts(){
             <div className='Food-Costs'>
                 <h4>Food Expenses</h4>
                 <div className='Food-Form'>
-                <Field
-                type='text'
-                className='Monthly-costs'
-                name='Monthly-Costs'
-                placeholder='$ Ongoing Monthly Expense'>Monthly Food Costs:</Field>
+                <label> Monthly Food Expenses:
+                    <Field
+                    type='text'
+                    className='Monthly-costs'
+                    name='Monthly-Costs'
+                    placeholder='$ Ongoing Monthly Expense'/>
+                </label>
 
-                <Field
-                type='text'
-                className='Stock-up'
-                placeholder='$ One time cost to stock up'>Stock Up Cost:</Field>
+                <label>One Time Stock Up Expense:
+                    <Field
+                    type='text'
+                    className='Stock-up'
+                    placeholder='$ One time cost to stock up'/>
+                </label>
 
-                <Field
-                type='text'
-                className='DineOut'
-                placeholder='Monthly Dining Cost'>Dine Out Cost:</Field>
+                <label>Dine Out Expense:
+                    <Field
+                    type='text'
+                    className='DineOut'
+                    placeholder='Monthly Dining Cost'/>
+                </label>
 
                 <button type='submit' className='submitBTN'>Next</button>
                 </div>
