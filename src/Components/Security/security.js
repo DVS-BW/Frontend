@@ -12,30 +12,35 @@ function SecurityCosts(){
             <div className='Security-Costs'>
                 <h4>Security Expenses</h4>
                 <div className='Security-Form'>
-                Monthly Security Costs:
-                    <Field
-                    type='text'
-                    className='Monthly-Security'
-                    name='Monthly-Security'
-                    placeholder='$ Ongoing Monthly Expense'></Field>
 
-                Phone Number Change:
-                    <Field
-                    type='text'
-                    className='Phone'
-                    placeholder='$ Cost to Change Phone #'></Field>
+                    <label>Monthly Security Costs:
+                        <Field
+                        type='text'
+                        className='Monthly-Security'
+                        name='Monthly-Security'
+                        placeholder='$ Ongoing Monthly Expense'/>
+                    </label>
 
-                Change Locks Cost:
-                    <Field
-                    type='text'
-                    className='change-locks'
-                    placeholder='Cost to change locks'></Field>
+                    <label>Phone Number Change:
+                        <Field
+                        type='text'
+                        className='Phone'
+                        placeholder='$ Cost to Change Phone #'/>
+                    </label>
 
-                Extra Security Cost:
-                    <Field
-                    type='text'
-                    className='extra-security'
-                    placeholder='Any Extra security measures needed'></Field>
+                    <label>Change Locks Cost:
+                        <Field
+                        type='text'
+                        className='change-locks'
+                        placeholder='Cost to change locks'/>
+                    </label>
+
+                    <label>Extra Security Cost:
+                        <Field
+                        type='text'
+                        className='extra-security'
+                        placeholder='Any Extra security measures needed'/>
+                    </label>
 
                     <button type='submit' className='submitBTN'>Next</button>
                 </div>
