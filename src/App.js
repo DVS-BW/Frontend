@@ -6,10 +6,10 @@ import Nav from './components/Nav/nav';
 import { calcDebtAC } from './actions';
 
 // import Debt from './components/Debt/debt';
-// import Food from './components/Food/food';
+import FoodCosts from './components/Food/food';
 import HealthCosts from './components/Health/health';
 import SecurityCosts from './components/Security/security';
-import { calcSecurityAC, calcHealthAC } from './actions';
+import { calcSecurityAC, calcHealthAC, calcFoodAC } from './actions';
 
 // import Footer from './components/Footer/footer';
 
@@ -26,6 +26,9 @@ const App = props => {
     else if (item.isSecurityEditing === true) {
       props.calcSecurityAC(item);
     }
+    else if (item.isFoodEditing === true) {
+      props.calcFoodAC(item);
+    }
   }
 
   return (
@@ -34,7 +37,8 @@ const App = props => {
       <Nav />
 
       {/* <Debt /> */}
-      {/* <Food /> */}
+      <FoodCosts 
+      submitHandler={submitHandler}/>
       <HealthCosts 
       submitHandler={submitHandler}/>
 
@@ -62,5 +66,5 @@ const mapStateToProps = state => {
 //Connect will join this component with the state from Redux.
 export default connect(
   mapStateToProps,
-  {calcSecurityAC, calcHealthAC }
+  {calcSecurityAC, calcHealthAC, calcFoodAC }
   )(App);

@@ -1,4 +1,4 @@
-import { CALC_SECURITY, CALC_HEALTH } from "../actions";
+import { CALC_SECURITY, CALC_HEALTH, CALC_FOOD } from "../actions";
 
 
 
@@ -12,9 +12,9 @@ export const initialState = {
         isHealthEditing: false
     },
     food: {
-        monthly_food: 0,
+        monthly_costs: 0,
         stock_up: 0,
-        dine_out: 0,
+        dineout: 0,
         isFoodEditing: false
     },
     security: {
@@ -54,6 +54,18 @@ export const reducer = (state = initialState, action) => {
                     isHealthEditing: false
                 }
             }
+
+        case CALC_FOOD: 
+        return {
+            ...state,
+            totalCost: state.totalCost + action.payload.monthly_costs + action.payload.stock_up + action.payload.dineout,
+            health: {
+                monthly_food: action.payload.monthly_food,
+                stock_up: action.payload.stock_up,
+                dine_out: action.payload.dine_out,
+                isFoodEditing: false
+            }
+        }
 
         default: 
         return state;

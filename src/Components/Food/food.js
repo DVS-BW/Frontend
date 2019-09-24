@@ -1,53 +1,56 @@
-import React from 'react';
-import Formik, {Form, Field, withFormik} from 'formik';
+import React, {useState} from 'react';
+import {Formik, Form, Field, withFormik} from 'formik';
+import styled from 'styled-components';
 import * as Yup from 'yup';
 
-const DVtheme = {
-    primary:'#800080',
-    secondary:'white',
-    third:'#2D182E',
-}
+// const DVtheme = {
+//     primary:'#800080',
+//     secondary:'white',
+//     third:'#2D182E',
+// }
 
-const Button =styled.button`
-    font-family:sans-serif;
-    font-size: 1.5rem;
-    border:#2D182E;
-    border-radius:25px;
-    background: ${props => props.secondary};
-    color: ${props=>props.third};
-`
-const DIVwrapper= styled.FoodCosts`
-    font-family:sans-serif;
-    font-size:2rem;
-    border:none;
-    background:${props => props.secondary};
-    color:${props => props.third};
+// const Button =styled.button`
+//     font-family:sans-serif;
+//     font-size: 1.5rem;
+//     border:#2D182E;
+//     border-radius:25px;
+//     background: ${props => props.secondary};
+//     color: ${props=>props.third};
+// `;
+// const DIVwrapper= styled.FoodCosts`
+//     font-family:sans-serif;
+//     font-size:2rem;
+//     border:none;
+//     background:${props => props.secondary};
+//     color:${props => props.third};
 
-`
+// `;
 
 const FoodCosts = props => {
-    const [foodCosts, setFoodCosts]=useState({});
-    console.log(foodCosts);
+    const [foodCost, setFoodCost]=useState({});
+    console.log(foodCost);
 
     const changeHandler = event =>{
         console.log(event.target.value);
-        setFoodCosts({...foodCosts, [event.target.name]:parseFloat(event.target.value)
+        setFoodCost({...foodCost,
+            isFoodEditing: true, 
+            [event.target.name]: parseFloat(event.target.value)
         })}
 
     return(
         <Formik>
-            <ThemeProvider theme={DVtheme}>
-        <Form>
-            <DIVwrapper primary className='FoodCosts'>
+            {/* <ThemeProvider theme={DVtheme}> */}
+        <Form onSubmit={(e) => {props.submitHandler(e, foodCost)}}>
+            {/* <DIVwrapper primary className='FoodCosts'> */}
                 <h4>Food Expenses</h4>
                 <div className='Food-Form'>
                 <label> Monthly Food Expenses:
                     <Field
                     type='text'
                     className='Monthly-costs'
-                    name='Monthly_Costs'
+                    name='monthly_costs'
                     placeholder='$ Ongoing Monthly Expense'
-                    value={foodCosts.monthly_Costs}
+                    value={foodCost.monthly_costs}
                     onChange={changeHandler}/>
                 </label>
 
@@ -55,9 +58,9 @@ const FoodCosts = props => {
                     <Field
                     type='text'
                     className='Stock-up'
-                    name='Stock_up'
+                    name='stock_up'
                     placeholder='$ One time cost to stock up'
-                    value={foodCosts.Stock_up}
+                    value={foodCost.stock_up}
                     onChange={changeHandler}/>
                 </label>
 
@@ -67,22 +70,19 @@ const FoodCosts = props => {
                     className='DineOut'
                     name='dineout'
                     placeholder='Monthly Dining Cost'
-                    value={foodCosts.dineout}
+                    value={foodCost.dineout}
                     onChange={changeHandler}/>
-                </label>     
-            </DIVwrapper>
+                </label>  
+
+                <button type='submit' className='submitBTN'>Next</button>
+
+                </div>   
+            {/* </DIVwrapper> */}
             
         </Form>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
         </Formik>
     )
 }
 
 export default FoodCosts;
-
-
-<Form>
-            
-
-            <button type='submit'>Next</button>
-        </Form>
