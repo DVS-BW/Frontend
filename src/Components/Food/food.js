@@ -47,7 +47,7 @@ function FoodCosts(){
                 </label>
 
                 <button type='submit' className='submitBTN'>Next</button>
-                </div>
+                </div> 
                 
             </div>
             
