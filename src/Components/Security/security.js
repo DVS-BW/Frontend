@@ -17,11 +17,6 @@ const SecurityCosts = props => {
             [event.target.name]: parseFloat(event.target.value)
     })} 
 
-    // const submitHandler = e => {
-    //     e.preventDefault();
-    //      calcDebtAC();
-    //   }
-
     return(
         <Formik>
         <Form onSubmit={(e) => {props.submitHandler(e, securityCost)}}>

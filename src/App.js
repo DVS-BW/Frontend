@@ -4,7 +4,6 @@ import './App.scss';
 // import Header from './components/Header/header';
 import Nav from './components/Nav/nav';
 import { calcDebtAC } from './actions';
-import reducer from './reducers';
 
 // import Debt from './components/Debt/debt';
 // import Food from './components/Food/food';
@@ -34,7 +33,8 @@ const App = props => {
       submitHandler={submitHandler} />
 
     <div>
-      <p>Total cost is ${props.totalCost}.</p>
+      {/* <h1>Total cost is ${props.totalCost}.</h1>
+      <div>{props.obj.monthly_security} {props.obj.phone_change}</div> */}
     </div>
 
       {/* <Footer /> */}
@@ -45,8 +45,8 @@ const App = props => {
 //Helper function that tells connector (below) which pieces of state we need.
 const mapStateToProps = state => {
   return {
-    totalCost: state.totalCost
-    // INCLUDE THE REST OF THE USER TOTALS HERE AS PROPS
+    totalCost: state.totalCost,
+    obj: state.security
   }
 }
 
