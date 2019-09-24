@@ -27,12 +27,11 @@ const DIVwrapper= styled.FoodCosts`
 const SecurityCosts = props => {
 
     const [securityCost, setSecurityCost]=useState({});
-    console.log(securityCost);
 
     const changeHandler = event => {
-        console.log(event.target.value);
         setSecurityCost({
             ...securityCost,
+            isSecurityEditing: true,
             [event.target.name]: parseFloat(event.target.value)
     })} 
 

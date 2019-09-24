@@ -69,11 +69,7 @@ const FoodCosts = props => {
                     placeholder='Monthly Dining Cost'
                     value={foodCosts.dineout}
                     onChange={changeHandler}/>
-                </label>
-
-                <Button secondary type='submit' className='submitBTN'>Next</Button>
-                </div>
-                
+                </label>     
             </DIVwrapper>
             
         </Form>
