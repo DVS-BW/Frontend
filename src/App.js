@@ -8,7 +8,7 @@ import { calcDebtAC } from './actions';
 // import Debt from './components/Debt/debt';
 // import Food from './components/Food/food';
 // import Health from './components/Health/health';
-// import Security from './components/Security/security';
+import SecurityCosts from './components/Security/security';
 
 // import Footer from './components/Footer/footer';
 
@@ -21,7 +21,7 @@ function App() {
       {/* <Debt /> */}
       {/* <Food /> */}
       {/* <Health /> */}
-      {/* <Security /> */}
+      <SecurityCosts />
 
       {/* <Footer /> */}
     </div>

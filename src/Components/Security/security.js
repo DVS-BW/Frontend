@@ -1,35 +1,41 @@
 import React, {useState} from 'react';
-import Formik, {Form, Field, withFormik} from 'formik';
+import {Form, Field, withFormik, Formik} from 'formik';
 import * as Yup from 'yup';
 
 
 function SecurityCosts(){
     const [securityCost, setSecurityCost]=useState(0);
+
     return(
+        <Formik>
         <Form>
             <div className='Security-Costs'>
                 <h4>Security Expenses</h4>
                 <div className='Security-Form'>
+                Monthly Security Costs:
                     <Field
                     type='text'
                     className='Monthly-Security'
                     name='Monthly-Security'
-                    placeholder='$ Ongoing Monthly Expense'>Monthly Security Costs:</Field>
+                    placeholder='$ Ongoing Monthly Expense'></Field>
 
+                Phone Number Change:
                     <Field
                     type='text'
                     className='Phone'
-                    placeholder='$ Cost to Change Phone #'>Phone Number Change:</Field>
+                    placeholder='$ Cost to Change Phone #'></Field>
 
+                Change Locks Cost:
                     <Field
                     type='text'
                     className='change-locks'
-                    placeholder='Cost to change locks'>Change Locks Cost:</Field>
+                    placeholder='Cost to change locks'></Field>
 
+                Extra Security Cost:
                     <Field
                     type='text'
                     className='extra-security'
-                    placeholder='Any Extra security measures needed'>Extra Security Cost:</Field>
+                    placeholder='Any Extra security measures needed'></Field>
 
                     <button type='submit' className='submitBTN'>Next</button>
                 </div>
@@ -37,6 +43,7 @@ function SecurityCosts(){
             </div>
             
         </Form>
+        </Formik>
     )
 }
 
