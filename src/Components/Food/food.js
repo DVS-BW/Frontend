@@ -22,7 +22,12 @@ const DIVwrapper= styled.FoodCosts`
     border:none;
     background:${props => props.secondary};
     color:${props => props.third};
-
+`
+const Food=styled.FoodForm`
+    font-family:sans-serif;
+    font-size:1.5rem;
+    color:${props=>props.primary};
+    background:${props=>props.secondary};
 `
 
 const FoodCosts = props => {
@@ -40,7 +45,7 @@ const FoodCosts = props => {
         <Form>
             <DIVwrapper primary className='FoodCosts'>
                 <h4>Food Expenses</h4>
-                <div className='Food-Form'>
+                <Food className='FoodForm'>
                 <label> Monthly Food Expenses:
                     <Field
                     type='text'
@@ -70,6 +75,7 @@ const FoodCosts = props => {
                     value={foodCosts.dineout}
                     onChange={changeHandler}/>
                 </label>     
+                </Food>
             </DIVwrapper>
             
         </Form>
