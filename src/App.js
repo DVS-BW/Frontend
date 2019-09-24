@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import './App.scss';
 // import Header from './components/Header/header';
 import Nav from './components/Nav/nav';
+import { calcDebtAC } from './actions';
 
 // import Debt from './components/Debt/debt';
 // import Food from './components/Food/food';
