@@ -2,15 +2,22 @@ import React from 'react';
 import Formik, {Form, Field, withFormik} from 'formik';
 import * as Yup from 'yup';
 
+const DVtheme = {
+    primary:'#800080',
+    secondary:'white',
+}
+
 const label=styled.label`
 font-family:sans-serif, serif;
 color:#b865b8;
+
 `
 
 
 function FoodCosts(){
     const [foodCosts, setFoodCosts]=useState(0);
     return(
+        <ThemeProvider theme={DVtheme}>
         <Form>
             <div className='Food-Costs'>
                 <h4>Food Expenses</h4>
@@ -43,6 +50,7 @@ function FoodCosts(){
             </div>
             
         </Form>
+        </ThemeProvider>
     )
 }
 
