@@ -5,11 +5,13 @@ import * as Yup from 'yup';
 const DVtheme = {
     primary:'#800080',
     secondary:'white',
+    third:'#2D182E',
 }
 
 const label=styled.label`
 font-family:sans-serif, serif;
 color:#b865b8;
+font-size:2.5rem;
 
 `
 
