@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Form, Field, withFormik, Formik} from 'formik';
+import styled from 'styled-components';
 import * as Yup from 'yup';
 import styled from 'styled-components';
 // import {calcDebtAC} from '../../actions';
@@ -22,8 +23,27 @@ const Button =styled.button`
 //     font-family:sans-serif;
 //     font-size:2rem;
 //     border:none;
+
 //     background:${props => props.secondary};
 //     color:${props => props.third};`
+
+//     background:${props => props.primary};
+//     color:${props => props.secondary};`
+
+// const Label=styled.label`
+//     font-family:sans-serif;
+//     font-size:1.5rem;
+//     color:${props=>props.secondary};
+//     background: ${props => props.third};
+// `
+
+// const Security=styled.SecurityForm`
+//     font-family:sans-serif;
+//     font-size:1.5rem;
+//     color:${props=>props.primary};
+//     background:${props=>props.secondary};
+// `
+
 
 const SecurityCosts = props => {
 
@@ -40,9 +60,9 @@ const SecurityCosts = props => {
         <Formik>
         <Form onSubmit={(e) => {props.submitHandler(e, securityCost)}}>
 
-            <div className='Security-Costs'>
+            {/* <DIVwrapper className='SecurityCosts'> */}
                 <h4>Security Expenses</h4>
-                <div className='Security-Form'>
+                {/* <Security className='SecurityForm'> */}
 
                     <label>Monthly Security Costs:
                         <Field
@@ -84,10 +104,10 @@ const SecurityCosts = props => {
                         onChange={changeHandler}/>
                     </label>
 
-                    <button type='submit' className='submitBTN'>Next</button>
-                </div>
+                    <Button type='submit' className='submitBTN'>Next</Button>
+                {/* </Security> */}
                 
-            </div>
+            {/* </DIVwrapper> */}
             
         </Form>
         </Formik>

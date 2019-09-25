@@ -18,6 +18,7 @@ const HealthCosts = props => {
         <Formik>
             <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}}>
 
+
                 <div className='Health-Costs'>
                     <h4>Health Expenses</h4>
                     <div className='Health-Form'>
@@ -40,6 +41,9 @@ const HealthCosts = props => {
                             placeholder='Monthly Medication Costs'
                             onChange={changeHandler}/>
                     </label>
+
+        <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}}>
+
 
                     <label> Monthly Health Insurance Costs: 
                         <Field

@@ -2,18 +2,20 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './App.scss';
 // import Header from './components/Header/header';
-import Nav from './Components/Nav/nav';
+import Nav from './components/Nav/nav';
 import { calcDebtAC } from './actions';
 import HealthCosts from './Components/Health/health';
 // import Debt from './components/Debt/debt';
+
+
+
+import FoodCosts from './components/Food/food';
+import HealthCosts from './components/Health/health';
+import SecurityCosts from './components/Security/security';
+import TransCosts from './components/Transportation/transportation';
+import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
 // import Food from './components/Food/food';
 
- //import Health from './Components/Health/health';
-import SecurityCosts from './Components/Security/security';
-
-
-//import SecurityCosts from './components/Security/security';
-import { calcSecurityAC, calcHealthAC } from './actions';
 
 
 // import Footer from './components/Footer/footer';
@@ -31,6 +33,12 @@ const App = props => {
     else if (item.isSecurityEditing === true) {
       props.calcSecurityAC(item);
     }
+    else if (item.isFoodEditing === true) {
+      props.calcFoodAC(item);
+    }
+    else if (item.isTransEditing === true) {
+      props.calcTransAC(item);
+    }
   }
 
   return (
@@ -43,6 +51,7 @@ const App = props => {
       {/* <Header /> */}
       <Nav />
 
+
       {/* <Debt /> */}
       {/* <Food /> */}
 
@@ -50,13 +59,20 @@ const App = props => {
       {/*<SecurityCosts />*/}
 
       {/* <Footer /> */}
+
+      <FoodCosts 
+      submitHandler={submitHandler}/>
+
  
 
-      <HealthCosts 
+      <HealthCosts
       submitHandler={submitHandler}/>
 
       {/*<SecurityCosts 
       submitHandler={submitHandler} />*/}
+
+<TransCosts 
+      submitHandler={submitHandler} />
 
     <div>
       <h1>Total cost is ${props.totalCost}.</h1>
@@ -80,5 +96,5 @@ const mapStateToProps = state => {
 //Connect will join this component with the state from Redux.
 export default connect(
   mapStateToProps,
-  {calcSecurityAC, calcHealthAC }
+  {calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC }
   )(App);
