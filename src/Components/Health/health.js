@@ -47,9 +47,6 @@ const HealthCosts = props => {
                             onChange={changeHandler}/>
                     </label>
 
-        <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}}>
-
-
                     <label> Monthly Health Insurance Costs: 
                         <Field
                             type='text'
