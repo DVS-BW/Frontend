@@ -49,7 +49,7 @@ const App = props => {
       {/* <Footer /> */}
  
 
-      <HealthCosts 
+      <Health 
       submitHandler={submitHandler}/>
 
       <SecurityCosts 

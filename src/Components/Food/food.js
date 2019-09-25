@@ -75,7 +75,7 @@ const FoodCosts = props => {
                     value={foodCosts.dineout}
                     onChange={changeHandler}/>
                 </label>     
-                <button type='submit'>Next</button>
+                <Button type='submit'>Next</Button>
                 </Food>
             </DIVwrapper>
             
