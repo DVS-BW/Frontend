@@ -16,7 +16,11 @@ const HealthCosts = props => {
 
     return (
         <Formik>
+
+        <Form>
+
         <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}}>
+
             <div className='Health-Costs'>
                 <h4>Health Expenses</h4>
                 <div className='Health-Form'>

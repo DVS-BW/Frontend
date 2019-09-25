@@ -1,4 +1,5 @@
 import { CALC_SECURITY, CALC_HEALTH, CALC_FOOD } from "../actions";
+import { CALC_DEBT } from "../actions";
 
 
 
@@ -25,34 +26,15 @@ export const initialState = {
         isSecurityEditing: false
     },
     transportation: {}
+
 }
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case CALC_SECURITY:
+        case CALC_DEBT:
             return {
                 ...state,
-                totalCost: state.totalCost + action.payload.monthly_security + action.payload.phone_change + action.payload.extra_security + action.payload.locks_change,
-                security: {
-                    monthly_security: action.payload.monthly_security,
-                    phone_change: action.payload.phone_change,
-                    extra_security: action.payload.extra_security,
-                    locks_change: action.payload.locks_change,
-                    isSecurityEditing: false
-                }
-            }
-
-        case CALC_HEALTH: 
-            return {
-                ...state,
-                totalCost: state.totalCost + action.payload.monthly_health_expenses + action.payload.medication_costs + action.payload.health_insurance_costs,
-                health: {
-                    monthly_health_expenses: action.payload.monthly_health_expenses,
-                    extra_security: action.payload.extra_security, 
-                    health_insurance_costs: action.payload.health_insurance_costs,
-                    isHealthEditing: false
-                }
             }
 
         case CALC_FOOD: 
