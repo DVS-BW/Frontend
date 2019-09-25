@@ -68,3 +68,15 @@ $main-font-color: #A370A4;
     width: 150px;
   }
 }
+
+
+/* SIGN UP */
+
+.signup-div form{
+  display: flex;
+  flex-direction: column;
+
+  input {
+    margin: 10px 0;
+  }
+}
