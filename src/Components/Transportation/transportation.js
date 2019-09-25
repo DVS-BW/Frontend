@@ -41,9 +41,10 @@ const TransCosts = props => {
     const [transCost, setTransCost]=useState({});
 
     const changeHandler = event => {
+        console.log("Change Handler", transCost);
         setTransCost({
             ...transCost,
-            isSecurityEditing: true,
+            isTransEditing: true,
             [event.target.name]: parseFloat(event.target.value)
     })} 
 
