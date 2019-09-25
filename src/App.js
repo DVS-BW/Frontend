@@ -18,6 +18,11 @@ import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions
 
 
 
+
+
+
+
+
 // import Footer from './components/Footer/footer';
 
 
@@ -71,7 +76,7 @@ const App = props => {
       {/*<SecurityCosts 
       submitHandler={submitHandler} />*/}
 
-<TransCosts 
+      <TransCosts 
       submitHandler={submitHandler} />
 
     <div>
