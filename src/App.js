@@ -4,14 +4,20 @@ import './App.scss';
 // import Header from './components/Header/header';
 import Nav from './components/Nav/nav';
 import { calcDebtAC } from './actions';
-
+import HealthCosts from './Components/Health/health';
 // import Debt from './components/Debt/debt';
+
+
+
 import FoodCosts from './components/Food/food';
 import HealthCosts from './components/Health/health';
 import SecurityCosts from './components/Security/security';
 import TransCosts from './components/Transportation/transportation';
 import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
 // import Food from './components/Food/food';
+
+
+
 
 
 
@@ -50,15 +56,25 @@ const App = props => {
       {/* <Header /> */}
       <Nav />
 
+
+      {/* <Debt /> */}
+      {/* <Food /> */}
+
+      <HealthCosts /> 
+      {/*<SecurityCosts />*/}
+
+      {/* <Footer /> */}
+
       <FoodCosts 
       submitHandler={submitHandler}/>
+
  
 
       <HealthCosts
       submitHandler={submitHandler}/>
 
-      <SecurityCosts 
-      submitHandler={submitHandler} />
+      {/*<SecurityCosts 
+      submitHandler={submitHandler} />*/}
 
       <TransCosts 
       submitHandler={submitHandler} />
