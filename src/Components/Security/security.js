@@ -47,11 +47,18 @@ const SecurityCosts = props => {
     const [securityCost, setSecurityCost]=useState({});
 
     const changeHandler = event => {
-        setSecurityCost({
-            ...securityCost,
-            isSecurityEditing: true,
-            [event.target.name]: parseFloat(event.target.value)
-    })} 
+        let val = parseFloat(event.target.value);
+        if (isNaN(val)) {
+            setSecurityCost({[event.target.name]: ''})
+        }
+        else {
+            setSecurityCost({
+                ...securityCost,
+                isSecurityEditing: true,
+                [event.target.name]: val
+        })}
+    }
+     
 
     return(
         <Formik>
