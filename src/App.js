@@ -2,10 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './App.scss';
 // import Header from './components/Header/header';
-import Nav from './Components/Nav/nav';
+import Nav from './components/Nav/nav';
 import { calcDebtAC } from './actions';
 
 // import Debt from './components/Debt/debt';
+import FoodCosts from './components/Food/food';
+import HealthCosts from './components/Health/health';
+import SecurityCosts from './components/Security/security';
+import TransCosts from './components/Transportation/transportation';
+import { calcSecurityAC, calcHealthAC, calcFoodAC } from './actions';
 // import Food from './components/Food/food';
 
  import Health from './Components/Health/health';
@@ -28,6 +33,9 @@ const App = props => {
     else if (item.isSecurityEditing === true) {
       props.calcSecurityAC(item);
     }
+    else if (item.isFoodEditing === true) {
+      props.calcFoodAC(item);
+    }
   }
 
   return (
@@ -40,19 +48,17 @@ const App = props => {
       {/* <Header /> */}
       <Nav />
 
-      {/* <Debt /> */}
-      {/* <Food /> */}
-
-      <Health /> 
-      <SecurityCosts />
-
-      {/* <Footer /> */}
+      <FoodCosts 
+      submitHandler={submitHandler}/>
  
 
-      <Health 
+      <HealthCosts
       submitHandler={submitHandler}/>
 
       <SecurityCosts 
+      submitHandler={submitHandler} />
+
+<TransCosts 
       submitHandler={submitHandler} />
 
     <div>
@@ -77,5 +83,5 @@ const mapStateToProps = state => {
 //Connect will join this component with the state from Redux.
 export default connect(
   mapStateToProps,
-  {calcSecurityAC, calcHealthAC }
+  {calcSecurityAC, calcHealthAC, calcFoodAC }
   )(App);
