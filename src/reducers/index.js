@@ -1,4 +1,4 @@
-import { CALC_SECURITY, CALC_HEALTH, CALC_FOOD, CALC_DEBT  } from "../actions";
+import { CALC_SECURITY, CALC_HEALTH, CALC_FOOD, CALC_DEBT, CALC_TRANSPORTATION  } from "../actions";
 
 
 export const initialState = {
@@ -23,8 +23,13 @@ export const initialState = {
         locks_change: 0,
         isSecurityEditing: false
     },
-    transportation: {}
-
+    transportation: {
+        monthly_trans: 0,
+        rent: 0,
+        utilities: 0,
+        moving: 0,
+        isTransEditing: false
+    }
 }
 
 export const reducer = (state = initialState, action) => {
@@ -69,6 +74,20 @@ export const reducer = (state = initialState, action) => {
                         extra_security: action.payload.extra_security, 
                         health_insurance_costs: action.payload.health_insurance_costs,
                         isHealthEditing: false
+                    }
+                }
+
+            case CALC_TRANSPORTATION:
+                console.log('made it to reducer', action.payload)
+                return {
+                    ...state,
+                    totalCost: state.totalCost + action.payload.monthly_trans + action.payload.rent + action.payload.moving + action.payload.utilities,
+                    transportation: {
+                        monthly_trans: action.payload.monthly_trans,
+                        rent: action.payload.rent,
+                        moving: action.payload.moving,
+                        utilities: action.payload.utilities,
+                        isTransEditing: false
                     }
                 }
 
