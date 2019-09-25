@@ -88,37 +88,7 @@ const HealthCosts = props => {
                             onChange={changeHandler}/>
                     </Input>
 
-                    <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}}>
 
-
-                    <Input> Monthly Health Insurance Costs: 
-                        <Field
-                            type='text'
-                            className='Health-Insurance-Costs'
-                            name='health_insurance_costs'
-                            value={healthCost.health_insurance_costs}
-                            placeholder='Monthly Health Insurance Costs'
-                            onChange={changeHandler}/>
-                    </Input>
-
-                    <Input> Other Miscellaneous Monthly Expenses: 
-                        <Field
-                            type='text'
-                            className='Miscellaneous-Expenses'
-                            name='miscellaneous_expenses'
-                            value={healthCost.miscellaneous_expenses}
-                            placeholder='Monthly Miscellaneous Health Expenses'
-                            onChange={changeHandler}/>
-                    </Input>
-
-                    <Btn type='submit' className='submitBTN'>Next</Btn>
-                    </Form>
-                </Formcard>
-            </Wrapper>
-        </Form>
-        </Formik>
-    )
-}
 
 
 export default HealthCosts;
