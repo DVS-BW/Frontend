@@ -21,8 +21,22 @@ const DIVwrapper= styled.FoodCosts`
     font-family:sans-serif;
     font-size:2rem;
     border:none;
-    background:${props => props.secondary};
-    color:${props => props.third};`
+    background:${props => props.primary};
+    color:${props => props.secondary};`
+
+const Label=styled.label`
+    font-family:sans-serif;
+    font-size:1.5rem;
+    color:${props=>props.secondary};
+    background: ${props => props.third};
+`
+
+const Security=styled.SecurityForm`
+    font-family:sans-serif;
+    font-size:1.5rem;
+    color:${props=>props.primary};
+    background:${props=>props.secondary};
+`
 
 const SecurityCosts = props => {
 
@@ -39,11 +53,11 @@ const SecurityCosts = props => {
         <Formik>
         <Form onSubmit={(e) => {props.submitHandler(e, securityCost)}}>
 
-            <div className='Security-Costs'>
+            <DIVwrapper className='SecurityCosts'>
                 <h4>Security Expenses</h4>
-                <div className='Security-Form'>
+                <Security className='SecurityForm'>
 
-                    <label>Monthly Security Costs:
+                    <Label>Monthly Security Costs:
                         <Field
                         type='text'
                         className='Monthly_Security'
@@ -51,9 +65,9 @@ const SecurityCosts = props => {
                         placeholder='$ Ongoing Monthly Expense'
                         value={securityCost.monthly_security}
                         onChange={changeHandler}/>
-                    </label>
+                    </Label>
 
-                    <label>Phone Number Change:
+                    <Label>Phone Number Change:
                         <Field
                         type='text'
                         className='Phone'
@@ -61,9 +75,9 @@ const SecurityCosts = props => {
                         placeholder='$ Cost to Change Phone #'
                         value={securityCost.phone_change}
                         onChange={changeHandler}/>
-                    </label>
+                    </Label>
 
-                    <label>Change Locks Cost:
+                    <Label>Change Locks Cost:
                         <Field
                         type='text'
                         className='change_locks'
@@ -71,9 +85,9 @@ const SecurityCosts = props => {
                         placeholder='Cost to change locks'
                         value={securityCost.locks_change}
                         onChange={changeHandler}/>
-                    </label>
+                    </Label>
 
-                    <label>Extra Security Cost:
+                    <Label>Extra Security Cost:
                         <Field
                         type='text'
                         className='extra_security'
@@ -81,12 +95,12 @@ const SecurityCosts = props => {
                         placeholder='Any Extra security measures needed'
                         value={securityCost.extra_security}
                         onChange={changeHandler}/>
-                    </label>
+                    </Label>
 
-                    <button type='submit' className='submitBTN'>Next</button>
-                </div>
+                    <Button type='submit' className='submitBTN'>Next</Button>
+                </Security>
                 
-            </div>
+            </DIVwrapper>
             
         </Form>
         </Formik>

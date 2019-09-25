@@ -1,12 +1,5 @@
-export const CALC_SECURITY = 'CALC_SECURITY';
-export const CALC_HEALTH = 'CALC_HEALTH';
+export const CALC_DEBT = 'CALC_DEBT';
 
-export const calcSecurityAC = item => {
-    // console.log('made it to action!', item);
-    return {type: CALC_SECURITY, payload: item};
-}
-
-export const calcHealthAC = item => {
-    console.log('made it to action', item)
-    return {type: CALC_HEALTH, payload: item}
+export const calcDebtAC = item => {
+    return {type: CALC_DEBT, payload: item};
 }
