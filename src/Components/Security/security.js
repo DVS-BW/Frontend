@@ -39,7 +39,7 @@ const Btn =styled.button`
     border-radius:25px;
     background: ${props => props.secondary};
     color: ${props=>props.third};
-
+`
 
 
 const SecurityCosts = props => {
