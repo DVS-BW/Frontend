@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Form, Field, withFormik, Formik} from 'formik';
 import * as Yup from 'yup';
+import styled from 'styled-components';
 // import {calcDebtAC} from '../../actions';
 
 const DVtheme = {
@@ -17,12 +18,12 @@ const Button =styled.button`
     background: ${props => props.secondary};
     color: ${props=>props.third};
 `
-const DIVwrapper= styled.FoodCosts`
-    font-family:sans-serif;
-    font-size:2rem;
-    border:none;
-    background:${props => props.secondary};
-    color:${props => props.third};`
+// const DIVwrapper= styled.FoodCosts`
+//     font-family:sans-serif;
+//     font-size:2rem;
+//     border:none;
+//     background:${props => props.secondary};
+//     color:${props => props.third};`
 
 const SecurityCosts = props => {
 

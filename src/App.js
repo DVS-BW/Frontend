@@ -4,15 +4,15 @@ import './App.scss';
 // import Header from './components/Header/header';
 import Nav from './Components/Nav/nav';
 import { calcDebtAC } from './actions';
-
+import HealthCosts from './Components/Health/health';
 // import Debt from './components/Debt/debt';
 // import Food from './components/Food/food';
 
- import Health from './Components/Health/health';
+ //import Health from './Components/Health/health';
 import SecurityCosts from './Components/Security/security';
 
 
-import SecurityCosts from './components/Security/security';
+//import SecurityCosts from './components/Security/security';
 import { calcSecurityAC, calcHealthAC } from './actions';
 
 
@@ -46,8 +46,8 @@ const App = props => {
       {/* <Debt /> */}
       {/* <Food /> */}
 
-      <Health /> 
-      <SecurityCosts />
+      <HealthCosts /> 
+      {/*<SecurityCosts />*/}
 
       {/* <Footer /> */}
  
@@ -55,8 +55,8 @@ const App = props => {
       <HealthCosts 
       submitHandler={submitHandler}/>
 
-      <SecurityCosts 
-      submitHandler={submitHandler} />
+      {/*<SecurityCosts 
+      submitHandler={submitHandler} />*/}
 
     <div>
       <h1>Total cost is ${props.totalCost}.</h1>
