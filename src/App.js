@@ -10,7 +10,7 @@ import { calcDebtAC } from './actions';
 
  import Health from './Components/Health/health';
 import SecurityCosts from './Components/Security/security';
-import { calcSecurityAC, calcHealthAC } from './actions';
+import { calcSecurityAC, calcHealthAC, calcFoodAC} from './actions';
 
 
 // import Footer from './components/Footer/footer';
