@@ -50,4 +50,36 @@ $main-font-color: #A370A4;
       font-weight: bold;
     }
   }
+<<<<<<< HEAD
+}
+
+
+/* SECURITY */
+
+.Security-Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    margin: 10px 0;
+  }
+
+  button {
+    width: 150px;
+  }
+}
+
+
+/* SIGN UP */
+
+.signup-div form{
+  display: flex;
+  flex-direction: column;
+
+  input {
+    margin: 10px 0;
+  }
+=======
+>>>>>>> 361a71a62a9eea2a00dce0dfa8cb470023b9fc35
 }
