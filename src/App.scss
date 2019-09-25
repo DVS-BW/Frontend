@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family:sans-serif,serif;
+  color:#2D182E;
 }
 
 .App-logo {
@@ -24,6 +26,53 @@
 
 .debt{
   margin: 20%;
-  background: teal;
+  background: #800080;
   height: 500px;
+  
+ 
+  form{
+  display: flex;
+
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  h3{
+    margin-right: 2%;
+  }
+
+  input{
+    height: 20px;
+    margin: 18.720px 0;
+  }
+  button{
+    margin: 18.720px 0;
+    height: 26px;
+  }
+  select{
+    margin: 18.720px 0;
+    height: 26px;
+  }
+ 
+  }
+  .debtList{
+    background: teal;
+    margin: 1% auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    padding: 1%;
+   
+
+  }
+ 
 }
+
+ .number {
+   padding-top: 3px;
+  
+ }
+ .acc{
+   display: flex;
+   flex-wrap: wrap;
+   align-content: space-around;
+ }
