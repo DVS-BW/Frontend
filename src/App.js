@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './App.scss';
 import styled from 'styled-components';
+// import * as Tabs from './Components/Tabs/tabs.js'
 // import Header from './components/Header/header';
 import Nav from './Components/Nav/nav';
 import { calcDebtAC } from './actions';
@@ -59,7 +60,7 @@ const App = props => {
   return (
     <div className="App">
 
- 
+      {/* <Tabs/> */}
       
 
 
