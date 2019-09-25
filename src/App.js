@@ -10,9 +10,6 @@ import { calcDebtAC } from './actions';
 
  import Health from './Components/Health/health';
 import SecurityCosts from './Components/Security/security';
-
-
-import SecurityCosts from './components/Security/security';
 import { calcSecurityAC, calcHealthAC } from './actions';
 
 
@@ -52,7 +49,7 @@ const App = props => {
       {/* <Footer /> */}
  
 
-      <HealthCosts 
+      <Health 
       submitHandler={submitHandler}/>
 
       <SecurityCosts 
