@@ -2,17 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './App.scss';
 // import Header from './components/Header/header';
-import Nav from './components/Nav/nav';
+import Nav from './Components/Nav/nav';
 import { calcDebtAC } from './actions';
 import HealthCosts from './Components/Health/health';
 // import Debt from './components/Debt/debt';
+import FoodCosts from './Components/Food/food';
+import HealthCosts from './Components/Health/health';
+import SecurityCosts from './Components/Security/security';
+import TransCosts from './Components/Transportation/transportation';
 
-
-
-import FoodCosts from './components/Food/food';
-import HealthCosts from './components/Health/health';
-import SecurityCosts from './components/Security/security';
-import TransCosts from './components/Transportation/transportation';
 import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
 // import Food from './components/Food/food';
 
