@@ -17,8 +17,6 @@ const HealthCosts = props => {
     return (
         <Formik>
 
-        <Form>
-
         <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}}>
 
             <div className='Health-Costs'>

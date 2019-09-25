@@ -2,19 +2,16 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './App.scss';
 // import Header from './components/Header/header';
-import Nav from './Components/Nav/nav';
+import Nav from './components/Nav/nav';
 import { calcDebtAC } from './actions';
 
 // import Debt from './components/Debt/debt';
 import FoodCosts from './components/Food/food';
 import HealthCosts from './components/Health/health';
 import SecurityCosts from './components/Security/security';
+import TransCosts from './components/Transportation/transportation';
 import { calcSecurityAC, calcHealthAC, calcFoodAC } from './actions';
 // import Food from './components/Food/food';
-
- import Health from './Components/Health/health';
-import SecurityCosts from './Components/Security/security';
-import { calcSecurityAC, calcHealthAC } from './actions';
 
 
 // import Footer from './components/Footer/footer';
@@ -47,22 +44,17 @@ const App = props => {
       {/* <Header /> */}
       <Nav />
 
-      {/* <Debt /> */}
       <FoodCosts 
       submitHandler={submitHandler}/>
-      <HealthCosts />
-      {/* <Food /> */}
-
-      <Health /> 
-      <SecurityCosts />
-
-      {/* <Footer /> */}
  
 
-      <Health 
+      <HealthCosts
       submitHandler={submitHandler}/>
 
       <SecurityCosts 
+      submitHandler={submitHandler} />
+
+<TransCosts 
       submitHandler={submitHandler} />
 
     <div>

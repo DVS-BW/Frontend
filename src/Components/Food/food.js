@@ -3,30 +3,12 @@ import {Formik, Form, Field, withFormik} from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup';
 
-// const DVtheme = {
-//     primary:'#800080',
-//     secondary:'white',
-//     third:'#2D182E',
-// }
+const DVtheme = {
+    primary:'#800080',
+    secondary:'white',
+    third:'#2D182E',
+}
 
-<<<<<<< HEAD
-// const Button =styled.button`
-//     font-family:sans-serif;
-//     font-size: 1.5rem;
-//     border:#2D182E;
-//     border-radius:25px;
-//     background: ${props => props.secondary};
-//     color: ${props=>props.third};
-// `;
-// const DIVwrapper= styled.FoodCosts`
-//     font-family:sans-serif;
-//     font-size:2rem;
-//     border:none;
-//     background:${props => props.secondary};
-//     color:${props => props.third};
-
-// `;
-=======
 const Button =styled.button`
     font-family:sans-serif;
     font-size: 1.5rem;
@@ -35,20 +17,19 @@ const Button =styled.button`
     background: ${props => props.secondary};
     color: ${props=>props.third};
 `
-const DIVwrapper= styled.FoodCosts`
-    font-family:sans-serif;
-    font-size:2rem;
-    border:none;
-    background:${props => props.secondary};
-    color:${props => props.third};
-`
-const Food=styled.FoodForm`
-    font-family:sans-serif;
-    font-size:1.5rem;
-    color:${props=>props.primary};
-    background:${props=>props.secondary};
-`
->>>>>>> 361a71a62a9eea2a00dce0dfa8cb470023b9fc35
+// const DIVwrapper= styled.FoodCosts`
+//     font-family:sans-serif;
+//     font-size:2rem;
+//     border:none;
+//     background:${props => props.secondary};
+//     color:${props => props.third};
+// `
+// const Food=styled.FoodForm`
+//     font-family:sans-serif;
+//     font-size:1.5rem;
+//     color:${props=>props.primary};
+//     background:${props=>props.secondary};
+// `
 
 const FoodCosts = props => {
     const [foodCost, setFoodCost]=useState({});
@@ -67,7 +48,7 @@ const FoodCosts = props => {
         <Form onSubmit={(e) => {props.submitHandler(e, foodCost)}}>
             {/* <DIVwrapper primary className='FoodCosts'> */}
                 <h4>Food Expenses</h4>
-                <Food className='FoodForm'>
+                {/* <Food className='FoodForm'> */}
                 <label> Monthly Food Expenses:
                     <Field
                     type='text'
@@ -96,19 +77,10 @@ const FoodCosts = props => {
                     placeholder='Monthly Dining Cost'
                     value={foodCost.dineout}
                     onChange={changeHandler}/>
-<<<<<<< HEAD
-                </label>  
-
-                <button type='submit' className='submitBTN'>Next</button>
-
-                </div>   
-            {/* </DIVwrapper> */}
-=======
                 </label>     
                 <Button type='submit'>Next</Button>
-                </Food>
-            </DIVwrapper>
->>>>>>> 361a71a62a9eea2a00dce0dfa8cb470023b9fc35
+                {/* </Food> */}
+            {/* </DIVwrapper> */}
             
         </Form>
         {/* </ThemeProvider> */}
@@ -116,10 +88,6 @@ const FoodCosts = props => {
     )
 }
 
-<<<<<<< HEAD
-export default FoodCosts;
-=======
 export default FoodCosts;
 
 
->>>>>>> 361a71a62a9eea2a00dce0dfa8cb470023b9fc35
