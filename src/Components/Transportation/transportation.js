@@ -41,16 +41,24 @@ const TransCosts = props => {
     const [transCost, setTransCost]=useState({});
 
     const changeHandler = event => {
-        console.log("Change Handler", transCost);
+        let val = parseFloat(event.target.value);
+        if (isNaN(val)) {
+            setTransCost({[event.target.name]: ''})
+        }
+        else {
         setTransCost({
             ...transCost,
             isTransEditing: true,
-            [event.target.name]: parseFloat(event.target.value)
+            [event.target.name]: val
     })} 
+}
 
     return(
         <Formik>
-        <Form onSubmit={(e) => {props.submitHandler(e, transCost)}}>
+        <Form onSubmit={(e) => {
+            props.submitHandler(e, transCost);
+            setTransCost({});
+            }}>
 
             {/* <DIVwrapper className='TransCosts'> */}
                 <h4>Tranportation Expenses</h4>
@@ -98,6 +106,7 @@ const TransCosts = props => {
 
                     <Button type='submit' className='submitBTN'>Next</Button>
                 {/* </Transportation> */}
+                <button type="submit" className='last-button'>Send to Server</button>
                 
             {/* </DIVwrapper> */}
             

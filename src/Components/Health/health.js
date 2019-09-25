@@ -7,12 +7,17 @@ const HealthCosts = props => {
     const [healthCost, setHealthCost] = useState({});
 
     const changeHandler = event => {
-        console.log(healthCost);
+        let val = parseFloat(event.target.value);
+        if (isNaN(val)) {
+            setHealthCost({[event.target.name]: ''})
+        }
+        else {
         setHealthCost({
             ...healthCost,
             isHealthEditing: true,
-            [event.target.name]: parseFloat(event.target.value)
+            [event.target.name]: val
     })} 
+}
 
     return (
         <Formik>

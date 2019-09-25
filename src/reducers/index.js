@@ -1,9 +1,8 @@
-import { CALC_SECURITY, CALC_HEALTH, CALC_FOOD, CALC_DEBT, CALC_TRANSPORTATION  } from "../actions";
+import { CALC_SECURITY, CALC_HEALTH, CALC_FOOD, CALC_TRANSPORTATION  } from "../actions";
 
 
 export const initialState = {
     totalCost: 0,
-    debt: {},
     health: {
         monthly_health_expenses: 0,
         medication_costs: 0,
@@ -34,12 +33,6 @@ export const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-
-        case CALC_DEBT:
-            return {
-                ...state,
-            }
-
         case CALC_FOOD: 
         return {
             ...state,

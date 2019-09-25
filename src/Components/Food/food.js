@@ -33,14 +33,19 @@ const Button =styled.button`
 
 const FoodCosts = props => {
     const [foodCost, setFoodCost]=useState({});
-    console.log(foodCost);
 
     const changeHandler = event =>{
-        console.log(event.target.value);
-        setFoodCost({...foodCost,
+        let val = parseFloat(event.target.value);
+        if (isNaN(val)) {
+            setFoodCost({[event.target.name]: ''})
+        }
+        else {
+        setFoodCost({
+            ...foodCost,
             isFoodEditing: true, 
-            [event.target.name]: parseFloat(event.target.value)
+            [event.target.name]: val
         })}
+    }
 
     return(
         <Formik>
