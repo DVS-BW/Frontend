@@ -12,13 +12,14 @@ const DVtheme = {
 }
 
 const Wrapper=styled.div`
-    border:1px solid red;
+    border:1px solid blue;
     display:flex;
     display:inline-block;
     font-family:sans-serif;
     font-size:2rem;
+    text-decoration:underline;
     width:65%;
-    height:250px;
+    height:515px;
 `
 const Input=styled.label`
     display:flex;
@@ -26,19 +27,23 @@ const Input=styled.label`
     font-family:sans-serif;
     font-size:1rem;
     width:100%;
+    height:75px;
+    padding:5px;
 `
 
 const Formcard=styled.div`
     border:1px solid red;
+    height:75px;
 `
 
 const Btn =styled.button`
     font-family:sans-serif;
-    font-size:.75rem;
-    border:1px solid red;
+    font-size:1rem;
+    border:1px solid black;
+    width:15%;
     border-radius:25px;
-    background: ${props => props.secondary};
-    color: ${props=>props.third};
+    background: ${props => props.primary};
+    color: ${props=>props.secondary};
 `
 
 

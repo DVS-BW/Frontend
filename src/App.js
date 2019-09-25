@@ -57,8 +57,8 @@ const App = props => {
       {/* <Debt /> */}
       {/* <Food /> */}
 
-      <HealthCosts /> 
-      {/*<SecurityCosts />*/}
+      {/* <HealthCosts />  */}
+      {/* <SecurityCosts /> */}
 
       {/* <Footer /> */}
 
@@ -70,8 +70,8 @@ const App = props => {
       <HealthCosts
       submitHandler={submitHandler}/>
 
-      {/*<SecurityCosts 
-      submitHandler={submitHandler} />*/}
+      <SecurityCosts 
+      submitHandler={submitHandler} />
 
       <TransCosts 
       submitHandler={submitHandler} />
