@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Form, Field, withFormik, Formik} from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup';
-import styled from 'styled-components';
+
 // import {calcDebtAC} from '../../actions';
 
 const DVtheme = {
@@ -35,7 +35,7 @@ const Formcard=styled.div`
 const Btn =styled.button`
     font-family:sans-serif;
     font-size:.75rem;
-    border:#2D182E;
+    border:1px solid red;
     border-radius:25px;
     background: ${props => props.secondary};
     color: ${props=>props.third};

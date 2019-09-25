@@ -7,7 +7,6 @@ import { calcDebtAC } from './actions';
 import HealthCosts from './Components/Health/health';
 // import Debt from './components/Debt/debt';
 import FoodCosts from './Components/Food/food';
-import HealthCosts from './Components/Health/health';
 import SecurityCosts from './Components/Security/security';
 import TransCosts from './Components/Transportation/transportation';
 
