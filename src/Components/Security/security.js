@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Form, Field, withFormik, Formik} from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup';
+import styled from 'styled-components';
 // import {calcDebtAC} from '../../actions';
 
 const DVtheme = {
@@ -10,34 +11,36 @@ const DVtheme = {
     third:'#2D182E',
 }
 
-const Button =styled.button`
+const Wrapper=styled.div`
+    border:1px solid red;
+    display:flex;
+    display:inline-block;
     font-family:sans-serif;
-    font-size: 1.5rem;
+    font-size:2rem;
+    width:65%;
+    height:250px;
+`
+const Input=styled.label`
+    display:flex;
+    display:block;
+    font-family:sans-serif;
+    font-size:1rem;
+    width:100%;
+`
+
+const Formcard=styled.div`
+    border:1px solid red;
+`
+
+const Btn =styled.button`
+    font-family:sans-serif;
+    font-size:.75rem;
     border:#2D182E;
     border-radius:25px;
     background: ${props => props.secondary};
     color: ${props=>props.third};
-`
-// const DIVwrapper= styled.FoodCosts`
-//     font-family:sans-serif;
-//     font-size:2rem;
-//     border:none;
-//     background:${props => props.primary};
-//     color:${props => props.secondary};`
 
-// const Label=styled.label`
-//     font-family:sans-serif;
-//     font-size:1.5rem;
-//     color:${props=>props.secondary};
-//     background: ${props => props.third};
-// `
 
-// const Security=styled.SecurityForm`
-//     font-family:sans-serif;
-//     font-size:1.5rem;
-//     color:${props=>props.primary};
-//     background:${props=>props.secondary};
-// `
 
 const SecurityCosts = props => {
 
@@ -61,11 +64,11 @@ const SecurityCosts = props => {
         <Formik>
         <Form onSubmit={(e) => {props.submitHandler(e, securityCost)}}>
 
-            {/* <DIVwrapper className='SecurityCosts'> */}
+            <Wrapper className='SecurityCosts'>
                 <h4>Security Expenses</h4>
-                {/* <Security className='SecurityForm'> */}
+                <Formcard className='SecurityForm'>
 
-                    <label>Monthly Security Costs:
+                    <Input>Monthly Security Costs:
                         <Field
                         type='text'
                         className='Monthly_Security'
@@ -73,9 +76,9 @@ const SecurityCosts = props => {
                         placeholder='$ Ongoing Monthly Expense'
                         value={securityCost.monthly_security}
                         onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <label>Phone Number Change:
+                    <Input>Phone Number Change:
                         <Field
                         type='text'
                         className='Phone'
@@ -83,9 +86,9 @@ const SecurityCosts = props => {
                         placeholder='$ Cost to Change Phone #'
                         value={securityCost.phone_change}
                         onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <label>Change Locks Cost:
+                    <Input>Change Locks Cost:
                         <Field
                         type='text'
                         className='change_locks'
@@ -93,9 +96,9 @@ const SecurityCosts = props => {
                         placeholder='Cost to change locks'
                         value={securityCost.locks_change}
                         onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <label>Extra Security Cost:
+                    <Input>Extra Security Cost:
                         <Field
                         type='text'
                         className='extra_security'
@@ -103,12 +106,12 @@ const SecurityCosts = props => {
                         placeholder='Any Extra security measures needed'
                         value={securityCost.extra_security}
                         onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <Button type='submit' className='submitBTN'>Next</Button>
-                {/* </Security> */}
+                    <Btn type='submit' className='submitBTN'>Next</Btn>
+                </Formcard>
                 
-            {/* </DIVwrapper> */}
+            </Wrapper>
             
         </Form>
         </Formik>

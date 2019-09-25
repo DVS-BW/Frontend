@@ -7,8 +7,15 @@ import FoodCosts from './components/Food/food';
 import HealthCosts from './components/Health/health';
 import SecurityCosts from './components/Security/security';
 import TransCosts from './components/Transportation/transportation';
+
 import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
 // import Food from './components/Food/food';
+
+
+
+
+
+
 
 
 // import Footer from './components/Footer/footer';
@@ -44,17 +51,27 @@ const App = props => {
       {/* <Header /> */}
       <Nav />
 
+
+      {/* <Debt /> */}
+      {/* <Food /> */}
+
+      <HealthCosts /> 
+      {/*<SecurityCosts />*/}
+
+      {/* <Footer /> */}
+
       <FoodCosts 
       submitHandler={submitHandler}/>
+
  
 
       <HealthCosts
       submitHandler={submitHandler}/>
 
-      <SecurityCosts 
-      submitHandler={submitHandler} />
+      {/*<SecurityCosts 
+      submitHandler={submitHandler} />*/}
 
-<TransCosts 
+      <TransCosts 
       submitHandler={submitHandler} />
 
     <div>
