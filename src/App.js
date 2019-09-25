@@ -10,7 +10,7 @@ import FoodCosts from './components/Food/food';
 import HealthCosts from './components/Health/health';
 import SecurityCosts from './components/Security/security';
 import TransCosts from './components/Transportation/transportation';
-import { calcSecurityAC, calcHealthAC, calcFoodAC } from './actions';
+import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
 // import Food from './components/Food/food';
 
 
@@ -31,6 +31,9 @@ const App = props => {
     }
     else if (item.isFoodEditing === true) {
       props.calcFoodAC(item);
+    }
+    else if (item.isTransEditing === true) {
+      props.calcTransAC(item);
     }
   }
 
@@ -79,5 +82,5 @@ const mapStateToProps = state => {
 //Connect will join this component with the state from Redux.
 export default connect(
   mapStateToProps,
-  {calcSecurityAC, calcHealthAC, calcFoodAC }
+  {calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC }
   )(App);
