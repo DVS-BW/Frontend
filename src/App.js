@@ -13,9 +13,8 @@ import TransCosts from './components/Transportation/transportation';
 import { calcSecurityAC, calcHealthAC, calcFoodAC } from './actions';
 // import Food from './components/Food/food';
 
- import Health from './Components/Health/health';
-import SecurityCosts from './Components/Security/security';
-import { calcSecurityAC, calcHealthAC, calcFoodAC} from './actions';
+
+
 
 
 // import Footer from './components/Footer/footer';
@@ -58,7 +57,7 @@ const App = props => {
       <SecurityCosts 
       submitHandler={submitHandler} />
 
-<TransCosts 
+      <TransCosts 
       submitHandler={submitHandler} />
 
     <div>
