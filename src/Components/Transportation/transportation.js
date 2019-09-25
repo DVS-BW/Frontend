@@ -2,39 +2,46 @@ import React, {useState} from 'react';
 import {Form, Field, withFormik, Formik} from 'formik';
 import styled from 'styled-components';
 
-// const DVtheme = {
-//     primary:'#800080',
-//     secondary:'white',
-//     third:'#2D182E',
-// }
+const DVtheme = {
+    primary:'#800080',
+    secondary:'white',
+    third:'#2D182E',
+}
 
-const Button =styled.button`
+const Wrapper=styled.div`
+    border:1px solid blue;
+    display:flex;
+    display:inline-block;
     font-family:sans-serif;
-    font-size: 1.5rem;
-    border:#2D182E;
-    border-radius:25px;
-    background: ${props => props.secondary};
-    color: ${props=>props.third};
+    font-size:2rem;
+    text-decoration:underline;
+    width:65%;
+    height:515px;
 `
-// const DIVwrapper= styled.FoodCosts`
-//     font-family:sans-serif;
-//     font-size:2rem;
-//     border:none;
-//     background:${props => props.primary};
-//     color:${props => props.secondary};`
+const Input=styled.label`
+    display:flex;
+    display:block;
+    font-family:sans-serif;
+    font-size:1rem;
+    width:100%;
+    height:75px;
+    padding:5px;
+`
 
-// const Label=styled.label`
-//     font-family:sans-serif;
-//     font-size:1.5rem;
-//     color:${props=>props.secondary};
-//     background: ${props => props.third};
-// `
+const Formcard=styled.div`
+    border:1px solid red;
+    height:75px;
+`
 
-// const Transportation=styled.TransForm`
-//     font-family:sans-serif;
-//     font-size:1.5rem;
-//     color:${props=>props.primary};
-//     background:${props=>props.secondary};`
+const Btn =styled.button`
+    font-family:sans-serif;
+    font-size:1rem;
+    border:1px solid black;
+    width:15%;
+    border-radius:25px;
+    background: ${props => props.primary};
+    color: ${props=>props.secondary};
+`
 
 const TransCosts = props => {
 
@@ -52,11 +59,11 @@ const TransCosts = props => {
         <Formik>
         <Form onSubmit={(e) => {props.submitHandler(e, transCost)}}>
 
-            {/* <DIVwrapper className='TransCosts'> */}
+            <Wrapper className='TransCosts'>
                 <h4>Tranportation Expenses</h4>
-                {/* <Transportation className='TransForm'> */}
+                <Formcard className='TransForm'>
 
-                    <label>Monthly Transportation Costs:
+                    <Input>Monthly Transportation Costs:
                         <Field
                         type='text'
                         className='Monthly_Trans_Costs'
@@ -64,9 +71,9 @@ const TransCosts = props => {
                         placeholder='$ Ongoing Monthly Expenses'
                         value={transCost.monthly_trans}
                         onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <label>New Rent 
+                    <Input>New Rent 
                         <Field
                         type='text'
                         className='Rent'
@@ -74,9 +81,9 @@ const TransCosts = props => {
                         placeholder='$ New Rent Amount'
                         value={transCost.rent}
                         onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <label>Utility Deposits
+                    <Input>Utility Deposits
                         <Field
                         type='text'
                         className='utilities'
@@ -84,9 +91,9 @@ const TransCosts = props => {
                         placeholder='Cost to Start New Utilities'
                         value={transCost.utilities}
                         onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <label>Moving Expenses
+                    <Input>Moving Expenses
                         <Field
                         type='text'
                         className='moving'
@@ -94,12 +101,12 @@ const TransCosts = props => {
                         placeholder='Any Moving Expenses'
                         value={transCost.moving}
                         onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <Button type='submit' className='submitBTN'>Next</Button>
-                {/* </Transportation> */}
+                    <Btn type='submit' className='submitBTN'>Next</Btn>
+                </Formcard>
                 
-            {/* </DIVwrapper> */}
+            </Wrapper>
             
         </Form>
         </Formik>

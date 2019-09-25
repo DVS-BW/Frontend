@@ -9,27 +9,41 @@ const DVtheme = {
     third:'#2D182E',
 }
 
-const Button =styled.button`
+const Wrapper=styled.div`
+    border:1px solid blue;
+    display:flex;
+    display:inline-block;
     font-family:sans-serif;
-    font-size: 1.5rem;
-    border:#2D182E;
-    border-radius:25px;
-    background: ${props => props.secondary};
-    color: ${props=>props.third};
+    font-size:2rem;
+    text-decoration:underline;
+    width:65%;
+    height:515px;
 `
-// const DIVwrapper= styled.FoodCosts`
-//     font-family:sans-serif;
-//     font-size:2rem;
-//     border:none;
-//     background:${props => props.secondary};
-//     color:${props => props.third};
-// `
-// const Food=styled.FoodForm`
-//     font-family:sans-serif;
-//     font-size:1.5rem;
-//     color:${props=>props.primary};
-//     background:${props=>props.secondary};
-// `
+const Input=styled.label`
+    display:flex;
+    display:block;
+    font-family:sans-serif;
+    font-size:1rem;
+    width:100%;
+    height:75px;
+    padding:5px;
+`
+
+const Formcard=styled.div`
+    border:1px solid red;
+    height:75px;
+`
+
+const Btn =styled.button`
+    font-family:sans-serif;
+    font-size:1rem;
+    border:1px solid black;
+    width:15%;
+    border-radius:25px;
+    background: ${props => props.primary};
+    color: ${props=>props.secondary};
+`
+
 
 const FoodCosts = props => {
     const [foodCost, setFoodCost]=useState({});
@@ -44,12 +58,11 @@ const FoodCosts = props => {
 
     return(
         <Formik>
-            {/* <ThemeProvider theme={DVtheme}> */}
         <Form onSubmit={(e) => {props.submitHandler(e, foodCost)}}>
-            {/* <DIVwrapper primary className='FoodCosts'> */}
+            <Wrapper primary className='FoodCosts'>
                 <h4>Food Expenses</h4>
-                {/* <Food className='FoodForm'> */}
-                <label> Monthly Food Expenses:
+                <Formcard className='FoodForm'>
+                <Input> Monthly Food Expenses:
                     <Field
                     type='text'
                     className='Monthly-costs'
@@ -57,9 +70,9 @@ const FoodCosts = props => {
                     placeholder='$ Ongoing Monthly Expense'
                     value={foodCost.monthly_costs}
                     onChange={changeHandler}/>
-                </label>
+                </Input>
 
-                <label>One Time Stock Up Expense:
+                <Input>One Time Stock Up Expense:
                     <Field
                     type='text'
                     className='Stock-up'
@@ -67,9 +80,9 @@ const FoodCosts = props => {
                     placeholder='$ One time cost to stock up'
                     value={foodCost.stock_up}
                     onChange={changeHandler}/>
-                </label>
+                </Input>
 
-                <label>Dine Out Expense:
+                <Input>Dine Out Expense:
                     <Field
                     type='text'
                     className='DineOut'
@@ -77,13 +90,12 @@ const FoodCosts = props => {
                     placeholder='Monthly Dining Cost'
                     value={foodCost.dineout}
                     onChange={changeHandler}/>
-                </label>     
-                <Button type='submit'>Next</Button>
-                {/* </Food> */}
-            {/* </DIVwrapper> */}
+                </Input>     
+                <Btn type='submit'>Next</Btn>
+                </Formcard>
+            </Wrapper>
             
         </Form>
-        {/* </ThemeProvider> */}
         </Formik>
     )
 }

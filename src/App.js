@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './App.scss';
+import styled from 'styled-components';
 // import Header from './components/Header/header';
 import Nav from './Components/Nav/nav';
 import { calcDebtAC } from './actions';
@@ -21,6 +22,18 @@ import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions
 
 
 // import Footer from './components/Footer/footer';
+
+// styles
+
+const Total=styled.h1`
+    height:150px;
+    display:flex;
+    justify-content:center;
+    padding-top:75px;
+    border:1px solid red;
+    font-size:2.5rem;
+    font-family:sans-serif;
+`
 
 
 const App = props => {
@@ -77,7 +90,7 @@ const App = props => {
       submitHandler={submitHandler} />
 
     <div>
-      <h1>Total cost is ${props.totalCost}.</h1>
+      <Total>Total cost is ${props.totalCost}.</Total>
       {/* <div>{props.obj.monthly_security} {props.obj.phone_change}</div> */}
     </div>
 
