@@ -8,7 +8,6 @@ import Login from '../Login';
 //Styled Components
 
 const Container = styled.div`
-    border: 2px solid black;
     height: 100px;
 `
 const CopyRight = styled.div`
