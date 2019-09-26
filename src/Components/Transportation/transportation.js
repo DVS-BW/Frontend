@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Form, Field, withFormik, Formik} from 'formik';
+import {Form, Field, Formik} from 'formik';
 import styled from 'styled-components';
 
 const DVtheme = {
@@ -49,16 +49,24 @@ const TransCosts = props => {
     const [transCost, setTransCost]=useState({});
 
     const changeHandler = event => {
-        console.log("Change Handler", transCost);
+        let val = parseFloat(event.target.value);
+        if (isNaN(val)) {
+            setTransCost({[event.target.name]: ''})
+        }
+        else {
         setTransCost({
             ...transCost,
             isTransEditing: true,
-            [event.target.name]: parseFloat(event.target.value)
+            [event.target.name]: val
     })} 
+}
 
     return(
         <Formik>
-        <Form onSubmit={(e) => {props.submitHandler(e, transCost)}}>
+        <Form onSubmit={(e) => {
+            props.submitHandler(e, transCost);
+            setTransCost({});
+            }}>
 
             <Wrapper className='TransCosts'>
                 <h4>Tranportation Expenses</h4>
@@ -104,9 +112,9 @@ const TransCosts = props => {
                         onChange={changeHandler}/>
                     </Input>
 
+
                     <Btn type='submit' className='submitBTN'>Next</Btn>
-                </Formcard>
-                
+                </Formcard>            
             </Wrapper>
             
         </Form>

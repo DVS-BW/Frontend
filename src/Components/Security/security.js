@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import {Form, Field, withFormik, Formik} from 'formik';
+import {Form, Field, Formik} from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup';
 
-// import {calcDebtAC} from '../../actions';
 
 const DVtheme = {
     primary:'#800080',
@@ -42,8 +41,7 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
-    background: ${props => props.primary};
-    color: ${props=>props.secondary};
+
 `
 
 
@@ -52,11 +50,18 @@ const SecurityCosts = props => {
     const [securityCost, setSecurityCost]=useState({});
 
     const changeHandler = event => {
-        setSecurityCost({
-            ...securityCost,
-            isSecurityEditing: true,
-            [event.target.name]: parseFloat(event.target.value)
-    })} 
+        let val = parseFloat(event.target.value);
+        if (isNaN(val)) {
+            setSecurityCost({[event.target.name]: ''})
+        }
+        else {
+            setSecurityCost({
+                ...securityCost,
+                isSecurityEditing: true,
+                [event.target.name]: val
+        })}
+    }
+     
 
     return(
         <Formik>

@@ -4,6 +4,7 @@ import './App.scss';
 import styled from 'styled-components';
 // import * as Tabs from './Components/Tabs/tabs.js'
 // import Header from './components/Header/header';
+
 import Nav from './Components/Nav/nav';
 import { calcDebtAC } from './actions';
 import HealthCosts from './Components/Health/health';
@@ -12,8 +13,8 @@ import FoodCosts from './Components/Food/food';
 import SecurityCosts from './Components/Security/security';
 import TransCosts from './Components/Transportation/transportation';
 
+
 import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
-// import Food from './components/Food/food';
 
 
 
@@ -46,7 +47,6 @@ const MainStyles = styled.div`
 
 const App = props => {
   
-  //CAN'T COMBINE THESE...MUST MAKE A CONDITIONAL
   const submitHandler = (e, item) => {
     console.log('made it to SubmitHandler', item)
     e.preventDefault();
@@ -75,12 +75,6 @@ const App = props => {
       {/* <Header /> */}
       <Nav />
 
-
-      {/* <Debt /> */}
-      {/* <Food /> */}
-
-      {/* <HealthCosts />  */}
-      {/* <SecurityCosts /> */}
 
       {/* <Footer /> */}
 
