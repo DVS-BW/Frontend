@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import {Form, Field, Formik} from 'formik';
 import styled from 'styled-components';
-import * as Yup from 'yup';
-
 
 const DVtheme = {
     primary:'#800080',
     secondary:'white',
     third:'#2D182E',
 }
+
 
 const Wrapper=styled.div`
     border:1px solid blue;
@@ -41,79 +40,81 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
-
+    background: ${props => props.primary};
+    color: ${props=>props.secondary};
 `
 
+const TransCosts = props => {
 
-const SecurityCosts = props => {
-
-    const [securityCost, setSecurityCost]=useState({});
+    const [transCost, setTransCost]=useState({});
 
     const changeHandler = event => {
         let val = parseFloat(event.target.value);
         if (isNaN(val)) {
-            setSecurityCost({[event.target.name]: ''})
+            setTransCost({[event.target.name]: ''})
         }
         else {
-            setSecurityCost({
-                ...securityCost,
-                isSecurityEditing: true,
-                [event.target.name]: val
-        })}
-    }
-     
+        setTransCost({
+            ...transCost,
+            isTransEditing: true,
+            [event.target.name]: val
+    })} 
+}
 
     return(
         <Formik>
-        <Form onSubmit={(e) => {props.submitHandler(e, securityCost)}}>
+        <Form onSubmit={(e) => {
+            props.submitHandler(e, transCost);
+            setTransCost({});
+            }}>
 
-            <Wrapper className='SecurityCosts'>
-                <h4>Security Expenses</h4>
-                <Formcard className='SecurityForm'>
+            <Wrapper className='TransCosts'>
+                <h4>Tranportation Expenses</h4>
+                <Formcard className='TransForm'>
 
-                    <Input>Monthly Security Costs:
+                    <Input>Monthly Transportation Costs:
                         <Field
                         type='text'
-                        className='Monthly_Security'
-                        name='monthly_security'
-                        placeholder='$ Ongoing Monthly Expense'
-                        value={securityCost.monthly_security}
+                        className='Monthly_Trans_Costs'
+                        name='monthly_trans'
+                        placeholder='$ Ongoing Monthly Expenses'
+                        value={transCost.monthly_trans}
                         onChange={changeHandler}/>
                     </Input>
 
-                    <Input>Phone Number Change:
+                    <Input>New Rent 
                         <Field
                         type='text'
-                        className='Phone'
-                        name='phone_change'
-                        placeholder='$ Cost to Change Phone #'
-                        value={securityCost.phone_change}
+                        className='Rent'
+                        name='rent'
+                        placeholder='$ New Rent Amount'
+                        value={transCost.rent}
                         onChange={changeHandler}/>
                     </Input>
 
-                    <Input>Change Locks Cost:
+                    <Input>Utility Deposits
                         <Field
                         type='text'
-                        className='change_locks'
-                        name='locks_change'
-                        placeholder='Cost to change locks'
-                        value={securityCost.locks_change}
+                        className='utilities'
+                        name='utilities'
+                        placeholder='Cost to Start New Utilities'
+                        value={transCost.utilities}
                         onChange={changeHandler}/>
                     </Input>
 
-                    <Input>Extra Security Cost:
+                    <Input>Moving Expenses
                         <Field
                         type='text'
-                        className='extra_security'
-                        name='extra_security'
-                        placeholder='Any Extra security measures needed'
-                        value={securityCost.extra_security}
+                        className='moving'
+                        name='moving'
+                        placeholder='Any Moving Expenses'
+                        value={transCost.moving}
                         onChange={changeHandler}/>
                     </Input>
+
 
                     <Btn type='submit' className='submitBTN'>Next</Btn>
-                </Formcard>
-                
+                </Formcard>            
             </Wrapper>
             
         </Form>
@@ -121,4 +122,4 @@ const SecurityCosts = props => {
     )
 }
 
-export default SecurityCosts;
+export default TransCosts;
