@@ -5,13 +5,13 @@ import styled from 'styled-components';
 // import * as Tabs from './Components/Tabs/tabs.js'
 // import Header from './components/Header/header';
 
-import Nav from './Components/Nav/nav';
+import Nav from './components/Nav/nav';
 import { calcDebtAC } from './actions';
-import HealthCosts from './Components/Health/health';
+import HealthCosts from './components/Health/health';
 // import Debt from './components/Debt/debt';
-import FoodCosts from './Components/Food/food';
-import SecurityCosts from './Components/Security/security';
-import TransCosts from './Components/Transportation/transportation';
+import FoodCosts from './components/Food/food';
+import SecurityCosts from './components/Security/security';
+import TransCosts from './components/Transportation/transportation';
 
 
 import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
