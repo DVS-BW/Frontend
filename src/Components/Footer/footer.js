@@ -9,6 +9,7 @@ import Login from '../Login';
 
 const Container = styled.div`
     height: 100px;
+    background-color: #800080;
 `
 const CopyRight = styled.div`
     display: flex;
