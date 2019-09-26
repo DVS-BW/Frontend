@@ -15,7 +15,6 @@ import TransCosts from './Components/Transportation/transportation';
 
 
 import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
-// import Food from './components/Food/food';
 
 
 
@@ -41,7 +40,6 @@ const Total=styled.h1`
 
 const App = props => {
   
-  //CAN'T COMBINE THESE...MUST MAKE A CONDITIONAL
   const submitHandler = (e, item) => {
     console.log('made it to SubmitHandler', item)
     e.preventDefault();
@@ -69,12 +67,6 @@ const App = props => {
       {/* <Header /> */}
       <Nav />
 
-
-      {/* <Debt /> */}
-      {/* <Food /> */}
-
-      {/* <HealthCosts />  */}
-      {/* <SecurityCosts /> */}
 
       {/* <Footer /> */}
 
