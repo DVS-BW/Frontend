@@ -45,7 +45,9 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
+
     padding: 10px;
+
     `
 
 const HealthCosts = props => {
