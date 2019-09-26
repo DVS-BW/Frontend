@@ -36,6 +36,13 @@ const Total=styled.h1`
     font-size:2.5rem;
     font-family:sans-serif;
 `
+const MainStyles = styled.div`
+    background:white;
+    color:#800080;
+    font-family:sans-serif;
+    font-size:2rem;
+    border: 1px solid green;
+`
 
 
 const App = props => {
@@ -58,6 +65,7 @@ const App = props => {
   }
 
   return (
+    <MainStyles>
     <div className="App">
 
       {/* <Tabs/> */}
@@ -92,6 +100,7 @@ const App = props => {
       {/* <Footer /> */}
 
     </div>
+    </MainStyles>
   );
 }
 

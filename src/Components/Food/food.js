@@ -9,6 +9,7 @@ const DVtheme = {
     third:'#2D182E',
 }
 
+
 const Wrapper=styled.div`
     border:1px solid blue;
     display:flex;
@@ -18,6 +19,8 @@ const Wrapper=styled.div`
     text-decoration:underline;
     width:65%;
     height:515px;
+    color:white;
+    background:#800080;
 `
 const Input=styled.label`
     display:flex;
@@ -25,13 +28,14 @@ const Input=styled.label`
     font-family:sans-serif;
     font-size:1rem;
     width:100%;
-    height:75px;
+    height:100px;
     padding:5px;
 `
 
 const Formcard=styled.div`
-    border:1px solid red;
     height:75px;
+    padding:15px;
+    font-size:2.5rem;
 `
 
 const Btn =styled.button`
@@ -77,6 +81,7 @@ const FoodCosts = props => {
                     onChange={changeHandler}/>
                 </Input>
 
+                <Formcard>
                 <Input>One Time Stock Up Expense:
                     <Field
                     type='text'
@@ -86,7 +91,10 @@ const FoodCosts = props => {
                     value={foodCost.stock_up}
                     onChange={changeHandler}/>
                 </Input>
+                </Formcard>
+                
 
+                <Formcard>
                 <Input>Dine Out Expense:
                     <Field
                     type='text'
@@ -95,8 +103,10 @@ const FoodCosts = props => {
                     placeholder='Monthly Dining Cost'
                     value={foodCost.dineout}
                     onChange={changeHandler}/>
-                </Input>     
+                </Input> 
+                </Formcard>    
                 <Btn type='submit'>Next</Btn>
+                
                 </Formcard>
             </Wrapper>
             

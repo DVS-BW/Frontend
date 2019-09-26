@@ -8,6 +8,7 @@ const DVtheme = {
     third:'#2D182E',
 }
 
+
 const Wrapper=styled.div`
     border:1px solid blue;
     display:flex;
