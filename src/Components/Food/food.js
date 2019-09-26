@@ -28,7 +28,7 @@ const Input=styled.label`
     font-family:sans-serif;
     font-size:1rem;
     width:100%;
-    height:100px;
+    height:75px;
     padding:5px;
 `
 
@@ -44,15 +44,14 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
-    background: ${props => props.primary};
-    color: ${props=>props.secondary};
 `
 
 
 const FoodCosts = props => {
+
     const [foodCost, setFoodCost]=useState({});
 
-    const changeHandler = event =>{
+    const changeHandler = event => {
         let val = parseFloat(event.target.value);
         if (isNaN(val)) {
             setFoodCost({[event.target.name]: ''})
@@ -60,10 +59,10 @@ const FoodCosts = props => {
         else {
         setFoodCost({
             ...foodCost,
-            isFoodEditing: true, 
+            isFoodEditing: true,
             [event.target.name]: val
-        })}
-    }
+    })} 
+} 
 
     return(
         <Formik>
@@ -112,7 +111,7 @@ const FoodCosts = props => {
             
         </Form>
         </Formik>
-    )
+       )
 }
 
 export default FoodCosts;
