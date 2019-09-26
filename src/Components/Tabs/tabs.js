@@ -7,6 +7,13 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
+// imports for components
+import HealthCosts from '../Health/health';
+import FoodCosts from '../Food/food';
+import SecurityCosts from '../Security/security';
+import TransCosts from '../Transportation/transportation';
+import Debt from '../Debt/debt';
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -53,6 +60,26 @@ export default function SimpleTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const App = props =>{
+  const submitHandler = (e, item) => {
+    console.log('made it to SubmitHandler', item)
+    e.preventDefault();
+    if (item.isHealthEditing === true ) {
+      props.calcHealthAC(item);
+    }
+    else if (item.isSecurityEditing === true) {
+      props.calcSecurityAC(item);
+    }
+    else if (item.isFoodEditing === true) {
+      props.calcFoodAC(item);
+    }
+    else if (item.isTransEditing === true) {
+      props.calcTransAC(item);
+    }
+    else if (item.isDebtEditing === true) {
+      props.calcDebtAC(item);
+    }
+  
 
   return (
     <div className={classes.root}>
@@ -67,28 +94,31 @@ export default function SimpleTabs() {
       </AppBar>
       <TabPanel value={value} index={0}>
         Food 
-        {/* <FoodCosts/> */}
+        <FoodCosts 
+      submitHandler={submitHandler}/>
       </TabPanel>
 
       <TabPanel value={value} index={1}>
         Health
-        {/* <HealthCosts/> */}
+        <HealthCosts
+      submitHandler={submitHandler}/>
       </TabPanel>
 
       <TabPanel value={value} index={2}>
         Security
-        {/* <SecurityCosts/> */}
+        <SecurityCosts 
+      submitHandler={submitHandler} />
       </TabPanel>
 
       <TabPanel value={value} index={3}>
         Transportation
-        {/* <TransCosts/> */}
+        <TransCosts 
+      submitHandler={submitHandler} />
       </TabPanel>
 
       <TabPanel value={value} index={4}>
-        Debt
-        {/* <Debt/> */}
+      <Debt submitHandler={submitHandler} />
       </TabPanel>
     </div>
   );
-}
+  }}}

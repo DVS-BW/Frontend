@@ -80,7 +80,7 @@ const App = props => {
       submitHandler={submitHandler}/> */}
 
       {/* <HealthCosts
-      submitHandler={submitHandler}/>
+      submitHandler={submitHandler}/> 
 
       <SecurityCosts 
       submitHandler={submitHandler} />
