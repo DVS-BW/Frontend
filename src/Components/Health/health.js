@@ -3,12 +3,12 @@ import { Form, Field, Formik } from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup';
 
+
 const DVtheme = {
     primary:'#800080',
     secondary:'white',
     third:'#2D182E',
 }
-
 
 const Wrapper=styled.div`
     border:1px solid blue;
@@ -19,8 +19,7 @@ const Wrapper=styled.div`
     text-decoration:underline;
     width:65%;
     height:515px;
-    color:white;
-    background:#800080;
+
 `
 const Input=styled.label`
     display:flex;
@@ -28,7 +27,9 @@ const Input=styled.label`
     font-family:sans-serif;
     font-size:1rem;
     width:100%;
+
     height:70px;
+
     padding:5px;
 `
 
@@ -36,6 +37,7 @@ const Formcard=styled.div`
     height:75px;
     padding:15px;
     font-size:2.5rem;
+    height:75px;
 `
 
 const Btn =styled.button`
@@ -44,7 +46,6 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
-`
 
 const HealthCosts = props => {
     const [healthCost, setHealthCost] = useState({});
@@ -65,6 +66,7 @@ const HealthCosts = props => {
     return (
         <Formik>
             <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}}>
+
 
 
                 <Wrapper className='Health-Costs'>
