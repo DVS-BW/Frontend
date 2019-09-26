@@ -19,6 +19,8 @@ const Wrapper=styled.div`
     text-decoration:underline;
     width:65%;
     height:515px;
+    color: white;
+    background: #800080;
 
 `
 const Input=styled.label`
@@ -27,17 +29,14 @@ const Input=styled.label`
     font-family:sans-serif;
     font-size:1rem;
     width:100%;
-
-    height:70px;
-
-    padding:5px;
+    height:75px;
+    padding:20px;
 `
 
 const Formcard=styled.div`
-    height:75px;
-    padding:15px;
-    font-size:2.5rem;
-    height:75px;
+    height:70px;
+    padding: 15px;
+    font-size: 2.5rem;
 `
 
 const Btn =styled.button`
@@ -46,6 +45,7 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
+    padding: 10px;
     `
 
 const HealthCosts = props => {
