@@ -25,9 +25,10 @@ function Debt(props) {
     return (
         <Formik className='debt'> 
         <Form onSubmit={(e) => { props.submitHandler(e, debt) }} >
-        <h1> Debt </h1>
+       
 
         <div className='container'>
+        <h1> Debt </h1>
 
         <label>Credit Card {" "}
         <Field

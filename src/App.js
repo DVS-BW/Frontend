@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './App.scss';
 import styled from 'styled-components';
-import SimpleTabs from './Components/Tabs/tabs.js'
+import SimpleTabs from './Components/Tabs/tabs';
 // import Header from './components/Header/header';
 import Footer from './Components/Footer/footer';
 
