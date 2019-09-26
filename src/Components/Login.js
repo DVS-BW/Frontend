@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import {getSessionAC} from '../actions/index'; 
+import {connect} from 'react-redux';
 
 const Login = props => {
     const [credentials, setCredentials] = useState({});
@@ -15,9 +17,15 @@ const Login = props => {
         e.preventDefault();
         axios.post('https://dvs-bw-lambda.herokuapp.com/api/auth/login', credentials)
       .then(res => {
-          console.log('Logged in! Result', res);
-        // localStorage.setItem('token', res.data.payload);
+        console.log('Logged in! Result', res);
         props.history.push('/');
+      })
+      .then(res => {
+        axios.get('https://dvs-bw-lambda.herokuapp.com/api/calc')
+        .then(res => {
+          console.log(res);
+          props.getSessionAC();
+        })
       })
       .catch(err => {
         console.log(err)
@@ -39,4 +47,15 @@ const Login = props => {
 
 }
 
-export default Login;
+//Helper function that tells connector (below) which pieces of state we need.
+const mapStateToProps = state => {
+  return {
+    totalCost: state.totalCost, state: state
+  }
+}
+
+//Connect will join this component with the state from Redux.
+export default connect(
+mapStateToProps,
+{getSessionAC}
+)(Login);

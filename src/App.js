@@ -35,25 +35,27 @@ const MainStyles = styled.div`
 
 const App = props => {
   
-  const submitHandler = (e, item) => {
-    console.log('made it to SubmitHandler', item)
-    e.preventDefault();
-    if (item.isHealthEditing === true ) {
-      props.calcHealthAC(item);
-    }
-    else if (item.isSecurityEditing === true) {
-      props.calcSecurityAC(item);
-    }
-    else if (item.isFoodEditing === true) {
-      props.calcFoodAC(item);
-    }
-    else if (item.isTransEditing === true) {
-      props.calcTransAC(item);
-    }
-    else if (item.isDebtEditing === true) {
-      props.calcDebtAC(item);
-    }
-  }
+  // const submitHandler = (e, item) => {
+  //   console.log('made it to SubmitHandler', item)
+  //   e.preventDefault();
+  //   if (item.isHealthEditing === true ) {
+  //     props.calcHealthAC(item);
+  //   }
+  //   else if (item.isSecurityEditing === true) {
+  //     props.calcSecurityAC(item);
+  //   }
+  //   else if (item.isFoodEditing === true) {
+  //     props.calcFoodAC(item);
+  //   }
+  //   else if (item.isTransEditing === true) {
+  //     props.calcTransAC(item);
+  //   }
+  //   else if (item.isDebtEditing === true) {
+  //     props.calcDebtAC(item);
+  //   }
+  // }
+
+// 
 
   return (
     <MainStyles>

@@ -71,8 +71,9 @@ const SimpleTabs = props => {
     setValue(newValue);
   };
 
+//Add a new Action --> after a successful log-in, push the new data into Redux to replace InitialState.
 
-  const submitHandler = (e, item) => {
+const submitHandler = (e, item) => {
     console.log('made it to SubmitHandler', item)
     e.preventDefault();
     if (item.isHealthEditing === true ) {

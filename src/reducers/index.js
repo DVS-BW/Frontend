@@ -1,4 +1,4 @@
-import { CALC_SECURITY, CALC_HEALTH, CALC_FOOD, CALC_TRANSPORTATION, CALC_DEBT  } from "../actions";
+import { CALC_SECURITY, CALC_HEALTH, CALC_FOOD, CALC_TRANSPORTATION, CALC_DEBT, GET_SESSION_DATA  } from "../actions";
 
 
 export const initialState = {
@@ -44,7 +44,7 @@ export const initialState = {
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case CALC_FOOD: 
-        console.log(typeof state.food.monthly_costs, state.food.monthly_costs);
+        console.log(state);
         return {
             ...state,
             totalCost: state.totalCost + (action.payload.monthly_costs - state.food.monthly_costs) + (action.payload.stock_up - state.food.stock_up) + (action.payload.dineout - state.food.dineout),
@@ -57,7 +57,6 @@ export const reducer = (state = initialState, action) => {
         }
 
         case CALC_SECURITY:
-                console.log(state);
                 return {
                     ...state,
                     totalCost: state.totalCost + (action.payload.monthly_security - state.security.monthly_security) + (action.payload.phone_change - state.security.phone_change) + (action.payload.extra_security - state.security.extra_security) + (action.payload.locks_change - state.security.locks_change),
@@ -84,7 +83,6 @@ export const reducer = (state = initialState, action) => {
                 }
 
             case CALC_TRANSPORTATION:
-                console.log('made it to reducer', action.payload)
                 return {
                     ...state,
                     totalCost: state.totalCost + (action.payload.monthly_trans - state.transportation.monthly_trans)+ (action.payload.rent - state.transportation.rent)+ (action.payload.moving - state.transportation.moving)+ (action.payload.utilities - state.transportation.utilities),
@@ -98,7 +96,6 @@ export const reducer = (state = initialState, action) => {
                 }
 
             case CALC_DEBT:
-                console.log('made it to reducer', action.payload)
                 return {
                     ...state,
                     totalCost: state.totalCost + (action.payload.credit_card - state.debt.credit_card)+ (action.payload.personal_loan - state.debt.personal_loan) + (action.payload.car_loan - state.debt.car_loan) + (action.payload.mortgage - state.debt.mortgage) + (action.payload.student_loans - state.debt.student_loans) + (action.payload.other - state.debt.other),
@@ -112,6 +109,11 @@ export const reducer = (state = initialState, action) => {
                         isDebtEditing: false
                     }
                 }
+
+            // case GET_SESSION_DATA:
+            //     return {
+
+            //     }
         default: 
         return state;
     }
