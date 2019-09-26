@@ -9,6 +9,7 @@ const DVtheme = {
     third:'#2D182E',
 }
 
+
 const Wrapper=styled.div`
     border:1px solid blue;
     display:flex;
@@ -18,6 +19,8 @@ const Wrapper=styled.div`
     text-decoration:underline;
     width:65%;
     height:515px;
+    color:white;
+    background:#800080;
 `
 const Input=styled.label`
     display:flex;
@@ -30,8 +33,9 @@ const Input=styled.label`
 `
 
 const Formcard=styled.div`
-    border:1px solid red;
     height:75px;
+    padding:15px;
+    font-size:2.5rem;
 `
 
 const Btn =styled.button`
@@ -40,15 +44,14 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
-    background: ${props => props.primary};
-    color: ${props=>props.secondary};
 `
 
 
 const FoodCosts = props => {
+
     const [foodCost, setFoodCost]=useState({});
 
-    const changeHandler = event =>{
+    const changeHandler = event => {
         let val = parseFloat(event.target.value);
         if (isNaN(val)) {
             setFoodCost({[event.target.name]: ''})
@@ -56,10 +59,10 @@ const FoodCosts = props => {
         else {
         setFoodCost({
             ...foodCost,
-            isFoodEditing: true, 
+            isFodEditing: true,
             [event.target.name]: val
-        })}
-    }
+    })} 
+} 
 
     return(
         <Formik>
@@ -77,6 +80,7 @@ const FoodCosts = props => {
                     onChange={changeHandler}/>
                 </Input>
 
+                <Formcard>
                 <Input>One Time Stock Up Expense:
                     <Field
                     type='text'
@@ -86,7 +90,10 @@ const FoodCosts = props => {
                     value={foodCost.stock_up}
                     onChange={changeHandler}/>
                 </Input>
+                </Formcard>
+                
 
+                <Formcard>
                 <Input>Dine Out Expense:
                     <Field
                     type='text'
@@ -95,14 +102,16 @@ const FoodCosts = props => {
                     placeholder='Monthly Dining Cost'
                     value={foodCost.dineout}
                     onChange={changeHandler}/>
-                </Input>     
+                </Input> 
+                </Formcard>    
                 <Btn type='submit'>Next</Btn>
+                
                 </Formcard>
             </Wrapper>
             
         </Form>
         </Formik>
-    )
+       )
 }
 
 export default FoodCosts;

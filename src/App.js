@@ -6,13 +6,13 @@ import styled from 'styled-components';
 // import Header from './components/Header/header';
 import Footer from './Components/Footer/footer';
 
-import Nav from './Components/Nav/nav';
+import Nav from './components/Nav/nav';
 import { calcDebtAC } from './actions';
-import HealthCosts from './Components/Health/health';
+import HealthCosts from './components/Health/health';
 // import Debt from './components/Debt/debt';
-import FoodCosts from './Components/Food/food';
-import SecurityCosts from './Components/Security/security';
-import TransCosts from './Components/Transportation/transportation';
+import FoodCosts from './components/Food/food';
+import SecurityCosts from './components/Security/security';
+import TransCosts from './components/Transportation/transportation';
 
 
 import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
@@ -33,9 +33,15 @@ const Total=styled.h1`
     display:flex;
     justify-content:center;
     padding-top:75px;
-    border:1px solid red;
     font-size:2.5rem;
     font-family:sans-serif;
+`
+const MainStyles = styled.div`
+    background:white;
+    color:#800080;
+    font-family:sans-serif;
+    font-size:2rem;
+    border: 1px solid green;
 `
 
 
@@ -59,6 +65,7 @@ const App = props => {
   }
 
   return (
+    <MainStyles>
     <div className="App">
 
       {/* <Tabs/> */}
@@ -93,6 +100,7 @@ const App = props => {
       <Footer />
 
     </div>
+    </MainStyles>
   );
 }
 

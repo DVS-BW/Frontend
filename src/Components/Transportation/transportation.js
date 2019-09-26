@@ -8,6 +8,7 @@ const DVtheme = {
     third:'#2D182E',
 }
 
+
 const Wrapper=styled.div`
     border:1px solid blue;
     display:flex;
@@ -17,6 +18,8 @@ const Wrapper=styled.div`
     text-decoration:underline;
     width:65%;
     height:515px;
+    color:white;
+    background:#800080;
 `
 const Input=styled.label`
     display:flex;
@@ -29,7 +32,6 @@ const Input=styled.label`
 `
 
 const Formcard=styled.div`
-    border:1px solid red;
     height:75px;
 `
 
@@ -39,8 +41,6 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
-    background: ${props => props.primary};
-    color: ${props=>props.secondary};
 `
 
 const TransCosts = props => {
