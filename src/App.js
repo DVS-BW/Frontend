@@ -1,4 +1,7 @@
 import React from 'react';
+// import {NavLink} from 'react-router-dom';
+// import TabButtons from './Components/Tabs/tabs.js';
+// import {Button} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import './App.scss';
 import styled from 'styled-components';
@@ -72,7 +75,22 @@ const App = props => {
 
 
       {/* <Header /> */}
-      <Nav />
+      <Nav/>
+      {/* <TabButtons/> */}
+        {/* <Nav>
+            <NavLink to='/food'>
+                <Button content='Food' size='small' color='teal'/>
+            </NavLink>
+            <NavLink to='/health'>
+                <Button content='Health' size='small' color='purple'/>
+            </NavLink>
+            <NavLink to='/security'>
+                <Button content='Security' size='small' color='red'/>
+            </NavLink>
+            <NavLink to='/transportation'>
+                <Button content='Transportation' size='small' color='blue'/>
+            </NavLink>
+        </Nav> */}
 
 
       {/* <Footer /> */}

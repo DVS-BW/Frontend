@@ -1,35 +1,34 @@
-// import React from 'react';
-// import styled from 'styled-components';
-// import {Tab,Tabs, TabList, TabPanel} from 'react-tabs';
-// import FoodCosts from '../Food/food';
-// import HealthCosts from '../Health/health';
-// import SecurityCosts from '../Security/security';
-// import TransCosts from '../Transportation/transportation';
+import React from 'react'
+import { Button } from 'semantic-ui-react'
+import styled from 'styled-components';
 
-// export default ()=>(
-//     <Tabs>
-//         <TabList>
-//             <Tab>Food</Tab>
-//             <Tab>Health</Tab>
-//             <Tab>Security</Tab>
-//             <Tab>Transportation</Tab>
-//             <Tab>Debt</Tab>
-//         </TabList>
+const tabColors = styled.button`
+    border-color:purple;
+    background-color:white;
+    color:purple;
+`
 
-//         <TabPanel>
-//             <FoodCosts/>
-//         </TabPanel>
-//         <TabPanel>
-//             <HealthCosts/>
-//         </TabPanel>
-//         <TabPanel>
-//             <SecurityCosts/>
-//         </TabPanel>
-//         <TabPanel>
-//             <TransCosts/>
-//         </TabPanel>
-//         <TabPanel>
-//             {/* <DebtCosts/> */}
-//         </TabPanel>
-//     </Tabs>
-// )
+
+
+const TabButtons = () => (
+  <div>
+    <Button basic>Standard</Button>
+    <Button basic color='purple'>
+      Food
+    </Button>
+    <Button basic color='pink'>
+      Health
+    </Button>
+    <Button basic color='purple'>
+      Security
+    </Button>
+    <Button basic color='pink'>
+      Transportation
+    </Button>
+    <Button basic color='purple'>
+      Debt
+    </Button>
+  </div>
+)
+
+export default TabButtons;
