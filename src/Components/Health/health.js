@@ -1,6 +1,52 @@
 import React, { useState } from 'react';
 import { Form, Field, Formik } from 'formik';
+import styled from 'styled-components';
 import * as Yup from 'yup';
+
+
+
+//Styled Components
+
+const DVtheme = {
+    primary:'#800080',
+    secondary:'white',
+    third:'#2D182E',
+}
+
+const Wrapper=styled.div`
+    border:1px solid blue;
+    display:flex;
+    display:inline-block;
+    font-family:sans-serif;
+    font-size:2rem;
+    text-decoration:underline;
+    width:65%;
+    height:515px;
+`
+const Input=styled.label`
+    display:flex;
+    display:block;
+    font-family:sans-serif;
+    font-size:1rem;
+    width:100%;
+    height:75px;
+    padding:5px;
+`
+
+const Formcard=styled.div`
+    border:1px solid red;
+    height:75px;
+`
+
+const Btn =styled.button`
+    font-family:sans-serif;
+    font-size:1rem;
+    border:1px solid black;
+    width:15%;
+    border-radius:25px;
+    background: ${props => props.primary};
+    color: ${props=>props.secondary};
+    `
 
 const HealthCosts = props => {
     const [healthCost, setHealthCost] = useState({});
@@ -21,12 +67,10 @@ const HealthCosts = props => {
     return (
         <Formik>
             <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}}>
-
-
-                <div className='Health-Costs'>
+                <Wrapper primary className='Health-Costs'>
                     <h4>Health Expenses</h4>
-                    <div className='Health-Form'>
-                    <label> Monthly Health Expenses: 
+                    <Formcard className='Health-Form'>
+                    <Input> Monthly Health Expenses: 
                         <Field
                             type='text'
                             className='Monthly-Health-Expenses'
@@ -34,9 +78,9 @@ const HealthCosts = props => {
                             value={healthCost.monthly_health_expenses}
                             placeholder='$ Ongoing Health Expenses'
                             onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <label> Monthly Medication Costs: 
+                    <Input> Monthly Medication Costs: 
                         <Field
                             type='text'
                             className='Medication-Costs'
@@ -44,11 +88,11 @@ const HealthCosts = props => {
                             value={healthCost.medication_costs}
                             placeholder='Monthly Medication Costs'
                             onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
 
 
-                    <label> Monthly Health Insurance Costs: 
+                    <Input> Monthly Health Insurance Costs: 
                         <Field
                             type='text'
                             className='Health-Insurance-Costs'
@@ -56,9 +100,9 @@ const HealthCosts = props => {
                             value={healthCost.health_insurance_costs}
                             placeholder='Monthly Health Insurance Costs'
                             onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <label> Other Miscellaneous Monthly Expenses: 
+                    <Input> Other Miscellaneous Monthly Expenses: 
                         <Field
                             type='text'
                             className='Miscellaneous-Expenses'
@@ -66,11 +110,11 @@ const HealthCosts = props => {
                             value={healthCost.miscellaneous_expenses}
                             placeholder='Monthly Miscellaneous Health Expenses'
                             onChange={changeHandler}/>
-                    </label>
+                    </Input>
 
-                    <button type='submit' className='submitBTN'>Next</button>
-                </div>
-                </div>
+                    <Btn type='submit' className='submitBTN'>Next</Btn>
+                </Formcard>
+                </Wrapper>
             </Form>
         </Formik>
     )
