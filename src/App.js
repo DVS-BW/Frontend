@@ -4,7 +4,7 @@ import './App.scss';
 import styled from 'styled-components';
 // import * as Tabs from './Components/Tabs/tabs.js'
 // import Header from './components/Header/header';
-import Footer from './Components/Footer/footer';
+import Footer from './components/Footer/footer';
 
 import Nav from './components/Nav/nav';
 import { calcDebtAC } from './actions';

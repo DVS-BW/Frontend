@@ -13,7 +13,7 @@ const Container = styled.div`
 const CopyRight = styled.div`
     display: flex;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 45px;
 `
 
 const MiniNav = styled.div`
@@ -21,6 +21,8 @@ const MiniNav = styled.div`
     justify-content: space-between;
     
 `
+
+
 
 const Footer = () => {
     
