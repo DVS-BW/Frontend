@@ -53,31 +53,33 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SimpleTabs() {
+export function SimpleTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const App = props =>{
-  const submitHandler = (e, item) => {
-    console.log('made it to SubmitHandler', item)
-    e.preventDefault();
-    if (item.isHealthEditing === true ) {
-      props.calcHealthAC(item);
-    }
-    else if (item.isSecurityEditing === true) {
-      props.calcSecurityAC(item);
-    }
-    else if (item.isFoodEditing === true) {
-      props.calcFoodAC(item);
-    }
-    else if (item.isTransEditing === true) {
-      props.calcTransAC(item);
-    }
-    else if (item.isDebtEditing === true) {
-      props.calcDebtAC(item);
+  const App = props => {
+  
+    const submitHandler = (e, item) => {
+      console.log('made it to SubmitHandler', item)
+      e.preventDefault();
+      if (item.isHealthEditing === true ) {
+        props.calcHealthAC(item);
+      }
+      else if (item.isSecurityEditing === true) {
+        props.calcSecurityAC(item);
+      }
+      else if (item.isFoodEditing === true) {
+        props.calcFoodAC(item);
+      }
+      else if (item.isTransEditing === true) {
+        props.calcTransAC(item);
+      }
+      else if (item.isDebtEditing === true) {
+        props.calcDebtAC(item);
+      }
     }
   
 
@@ -120,5 +122,16 @@ export default function SimpleTabs() {
       <Debt submitHandler={submitHandler} />
       </TabPanel>
     </div>
-  );
-  }}}
+  )
+  }};
+  const mapStateToProps = state => {
+    return {
+      totalCost: state.totalCost,
+      obj: state.security
+    }
+  }
+
+  export default connect(
+    mapStateToProps,
+    {calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC }
+    )(App);
