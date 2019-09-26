@@ -59,7 +59,7 @@ const FoodCosts = props => {
         else {
         setFoodCost({
             ...foodCost,
-            isFodEditing: true,
+            isFoodEditing: true,
             [event.target.name]: val
     })} 
 } 

@@ -46,6 +46,7 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
+`
 
 const HealthCosts = props => {
     const [healthCost, setHealthCost] = useState({});
