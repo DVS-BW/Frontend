@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Form, Field, withFormik, Formik } from 'formik';
+import React, { useState } from 'react';
+import { Form, Field, Formik } from 'formik';
 import * as Yup from 'yup';
 
 const HealthCosts = props => {
@@ -47,7 +46,6 @@ const HealthCosts = props => {
                             onChange={changeHandler}/>
                     </label>
 
-        <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}}>
 
 
                     <label> Monthly Health Insurance Costs: 
