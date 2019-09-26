@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Field, Formik } from 'formik';
+import {connect} from 'react-redux';
+import axios from 'axios';
 // import * as Yup from 'yup';
 
 
@@ -20,7 +22,17 @@ function Debt(props) {
             })};
     }
 
-
+    const sendData = () => {
+        console.log(props.state);
+        axios.put('https://dvs-bw-lambda.herokuapp.com/api/calc', props.state)
+        .then(res => {
+            console.log('Data was saved successfully. Result', res);
+            props.history.push('/');
+        })
+        .catch(err => {
+            console.log('Sorry but you have to be logged in!', err)
+        })
+    }
 
     return (
         <Formik className='debt'> 
@@ -94,7 +106,7 @@ function Debt(props) {
             </label>
             
            
-                <button type='submit' className='submitBTN'>Next</button>
+                <button type='submit' className='submitBTN' onClick={sendData}>Submit</button>
                 </div>
             </Form>
         </Formik>
@@ -104,6 +116,15 @@ function Debt(props) {
 
 
 
-
-
-export default Debt;
+//Helper function that tells connector (below) which pieces of state we need.
+const mapStateToProps = state => {
+    return {
+      totalCost: state.totalCost, state: state
+    }
+  }
+  
+//Connect will join this component with the state from Redux.
+export default connect(
+mapStateToProps,
+{}
+)(Debt);
