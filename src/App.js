@@ -1,11 +1,8 @@
 import React from 'react';
-// import {NavLink} from 'react-router-dom';
-// import TabButtons from './Components/Tabs/tabs.js';
-// import {Button} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import './App.scss';
 import styled from 'styled-components';
-// import * as Tabs from './Components/Tabs/tabs.js'
+import SimpleTabs from './Components/Tabs/tabs.js'
 // import Header from './components/Header/header';
 import Footer from './Components/Footer/footer';
 
@@ -41,10 +38,11 @@ const Total=styled.h1`
 `
 const MainStyles = styled.div`
     background:white;
-    color:#800080;
+    color:#fac8c8;
     font-family:sans-serif;
-    font-size:2rem;
-    border: 1px solid green;
+    font-size:1rem;
+    padding:25px;
+    margin:0 auto;
 `
 
 
@@ -73,36 +71,13 @@ const App = props => {
   return (
     <MainStyles>
     <div className="App">
-
-      {/* <Tabs/> */}
-      
-
-
       {/* <Header /> */}
       <Nav/>
-      {/* <TabButtons/> */}
-        {/* <Nav>
-            <NavLink to='/food'>
-                <Button content='Food' size='small' color='teal'/>
-            </NavLink>
-            <NavLink to='/health'>
-                <Button content='Health' size='small' color='purple'/>
-            </NavLink>
-            <NavLink to='/security'>
-                <Button content='Security' size='small' color='red'/>
-            </NavLink>
-            <NavLink to='/transportation'>
-                <Button content='Transportation' size='small' color='blue'/>
-            </NavLink>
-        </Nav> */}
 
-
+      <SimpleTabs/>
       
-
       <FoodCosts 
       submitHandler={submitHandler}/>
-
- 
 
       <HealthCosts
       submitHandler={submitHandler}/>

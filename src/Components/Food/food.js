@@ -38,6 +38,7 @@ const Formcard=styled.div`
     font-size:2.5rem;
 `
 
+
 const Btn =styled.button`
     font-family:sans-serif;
     font-size:1rem;
