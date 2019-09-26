@@ -75,11 +75,11 @@ const App = props => {
       <Nav/>
 
       <SimpleTabs/>
-      
-      <FoodCosts 
-      submitHandler={submitHandler}/>
 
-      <HealthCosts
+      {/* <FoodCosts 
+      submitHandler={submitHandler}/> */}
+
+      {/* <HealthCosts
       submitHandler={submitHandler}/>
 
       <SecurityCosts 
@@ -88,7 +88,7 @@ const App = props => {
       <TransCosts 
       submitHandler={submitHandler} />
 
-      <Debt submitHandler={submitHandler} />
+      <Debt submitHandler={submitHandler} /> */}
 
     <div>
       <Total>Total cost is ${props.totalCost}.</Total>
