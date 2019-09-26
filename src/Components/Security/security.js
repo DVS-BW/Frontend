@@ -19,6 +19,8 @@ const Wrapper=styled.div`
     text-decoration:underline;
     width:65%;
     height:515px;
+    color:white;
+    background:#800080;
 `
 const Input=styled.label`
     display:flex;
@@ -31,8 +33,7 @@ const Input=styled.label`
 `
 
 const Formcard=styled.div`
-    border:1px solid red;
-    height:75px;
+    height:70px;
 `
 
 const Btn =styled.button`
