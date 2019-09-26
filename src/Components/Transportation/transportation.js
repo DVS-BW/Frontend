@@ -18,6 +18,8 @@ const Wrapper=styled.div`
     text-decoration:underline;
     width:65%;
     height:515px;
+    color:white;
+    background:#800080;
 `
 const Input=styled.label`
     display:flex;
