@@ -21,58 +21,52 @@
 
 .App-link {
   color: #09d3ac;
+  
 }
 
 
 .debt{
-  margin: 20%;
-  background: #800080;
-  height: 500px;
-  
- 
-  form{
-  display: flex;
-
-  justify-content: center;
-  width: 70%;
-  margin: 0 auto;
-  h3{
-    margin-right: 2%;
+  height: auto;
+  width: 90%;
+  margin: 20% auto;
+  h4{
+    margin-left: 10px;
   }
-
-  input{
-    height: 20px;
-    margin: 18.720px 0;
-  }
-  button{
-    margin: 18.720px 0;
-    height: 26px;
-  }
-  select{
-    margin: 18.720px 0;
-    height: 26px;
-  }
- 
-  }
-  .debtList{
-    background: teal;
-    margin: 1% auto;
-    display: flex;
-    flex-wrap: wrap;
-    width: 40%;
-    padding: 1%;
    
+    form{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
 
-  }
+        input{
+          height: 20px;
+          margin: 18.720px 0;
+        }
+      
+    }
+    .debtList{
+    
+      margin: 1% auto;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1%;
+    }
+    
  
 }
-
- .number {
-   padding-top: 3px;
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  h4{
+    margin: 17px 0px;
+  }
+  .input{
+    margin:  50px 0 ;
+  }
   
- }
- .acc{
-   display: flex;
-   flex-wrap: wrap;
-   align-content: space-around;
- }
+}
+
+ 
