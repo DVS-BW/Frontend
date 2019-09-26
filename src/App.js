@@ -7,26 +7,27 @@ import './App.scss';
 import styled from 'styled-components';
 // import * as Tabs from './Components/Tabs/tabs.js'
 // import Header from './components/Header/header';
+import Footer from './Components/Footer/footer';
 
 import Nav from './Components/Nav/nav';
-import { calcDebtAC } from './actions';
 import HealthCosts from './Components/Health/health';
 // import Debt from './components/Debt/debt';
 import FoodCosts from './Components/Food/food';
 import SecurityCosts from './Components/Security/security';
 import TransCosts from './Components/Transportation/transportation';
+import Debt from '../src/Components/Debt/debt';
 
 
-import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
-
-
-
-
+import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC } from './actions';
 
 
 
 
-// import Footer from './components/Footer/footer';
+
+
+
+
+
 
 // styles
 
@@ -64,6 +65,9 @@ const App = props => {
     else if (item.isTransEditing === true) {
       props.calcTransAC(item);
     }
+    else if (item.isDebtEditing === true) {
+      props.calcDebtAC(item);
+    }
   }
 
   return (
@@ -93,7 +97,7 @@ const App = props => {
         </Nav> */}
 
 
-      {/* <Footer /> */}
+      
 
       <FoodCosts 
       submitHandler={submitHandler}/>
@@ -109,12 +113,14 @@ const App = props => {
       <TransCosts 
       submitHandler={submitHandler} />
 
+      <Debt submitHandler={submitHandler} />
+
     <div>
       <Total>Total cost is ${props.totalCost}.</Total>
       {/* <div>{props.obj.monthly_security} {props.obj.phone_change}</div> */}
     </div>
 
-      {/* <Footer /> */}
+      <Footer />
 
     </div>
     </MainStyles>
@@ -132,5 +138,5 @@ const mapStateToProps = state => {
 //Connect will join this component with the state from Redux.
 export default connect(
   mapStateToProps,
-  {calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC }
+  {calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC }
   )(App);
