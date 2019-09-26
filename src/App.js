@@ -4,6 +4,7 @@ import './App.scss';
 import styled from 'styled-components';
 // import * as Tabs from './Components/Tabs/tabs.js'
 // import Header from './components/Header/header';
+import Footer from './components/Footer/footer';
 
 import Nav from './components/Nav/nav';
 import HealthCosts from './components/Health/health';
@@ -23,7 +24,7 @@ import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC } fro
 
 
 
-// import Footer from './components/Footer/footer';
+
 
 // styles
 
@@ -78,7 +79,7 @@ const App = props => {
       <Nav />
 
 
-      {/* <Footer /> */}
+      
 
       <FoodCosts 
       submitHandler={submitHandler}/>
@@ -101,7 +102,7 @@ const App = props => {
       {/* <div>{props.obj.monthly_security} {props.obj.phone_change}</div> */}
     </div>
 
-      {/* <Footer /> */}
+      <Footer />
 
     </div>
     </MainStyles>
