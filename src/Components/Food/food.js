@@ -11,6 +11,7 @@ const DVtheme = {
 
 
 const Wrapper=styled.div`
+    border:1px solid blue;
     display:flex;
     display:inline-block;
     font-family:sans-serif;
@@ -27,7 +28,7 @@ const Input=styled.label`
     font-family:sans-serif;
     font-size:1rem;
     width:100%;
-    height:100px;
+    height:75px;
     padding:5px;
 `
 
@@ -43,20 +44,25 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
-    background: ${props => props.primary};
-    color: ${props=>props.secondary};
 `
 
 
 const FoodCosts = props => {
+
     const [foodCost, setFoodCost]=useState({});
 
-
-    const changeHandler = event =>{
-       
-            isFoodEditing: true, 
-           
-    }
+    const changeHandler = event => {
+        let val = parseFloat(event.target.value);
+        if (isNaN(val)) {
+            setFoodCost({[event.target.name]: ''})
+        }
+        else {
+        setFoodCost({
+            ...foodCost,
+            isFodEditing: true,
+            [event.target.name]: val
+    })} 
+} 
 
     return(
         <Formik>

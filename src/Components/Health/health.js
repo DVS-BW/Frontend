@@ -11,6 +11,7 @@ const DVtheme = {
 
 
 const Wrapper=styled.div`
+    border:1px solid blue;
     display:flex;
     display:inline-block;
     font-family:sans-serif;
@@ -27,7 +28,7 @@ const Input=styled.label`
     font-family:sans-serif;
     font-size:1rem;
     width:100%;
-    height:100px;
+    height:70px;
     padding:5px;
 `
 
@@ -43,8 +44,6 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
-    background: ${props => props.primary};
-    color: ${props=>props.secondary};
 `
 
 const HealthCosts = props => {
@@ -113,7 +112,7 @@ const HealthCosts = props => {
                             onChange={changeHandler}/>
                     </Input>
 
-                    <button type='submit' className='submitBTN'>Next</button>
+                    <Btn type='submit' className='submitBTN'>Next</Btn>
                 </Formcard>
                 </Wrapper>
             </Form>

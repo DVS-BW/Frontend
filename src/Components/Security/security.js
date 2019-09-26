@@ -33,8 +33,7 @@ const Input=styled.label`
 `
 
 const Formcard=styled.div`
-    border:1px solid red;
-    height:75px;
+    height:70px;
 `
 
 const Btn =styled.button`

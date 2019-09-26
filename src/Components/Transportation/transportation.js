@@ -32,7 +32,6 @@ const Input=styled.label`
 `
 
 const Formcard=styled.div`
-    border:1px solid red;
     height:75px;
 `
 
@@ -42,8 +41,6 @@ const Btn =styled.button`
     border:1px solid black;
     width:15%;
     border-radius:25px;
-    background: ${props => props.primary};
-    color: ${props=>props.secondary};
 `
 
 const TransCosts = props => {
