@@ -32,7 +32,6 @@ const Total=styled.h1`
     display:flex;
     justify-content:center;
     padding-top:75px;
-    border:1px solid red;
     font-size:2.5rem;
     font-family:sans-serif;
 `
