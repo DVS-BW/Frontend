@@ -13,6 +13,7 @@ export const calcHealthAC = item => {
 }
 
 export const calcFoodAC = item => {
+    console.log('made it to Food action', item);
     return {type: CALC_FOOD, payload: item}
 }
 
