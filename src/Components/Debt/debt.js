@@ -25,72 +25,71 @@ function Debt(props) {
 
 
     return (
-        <Formik className='debt'> 
+    <Formik className='debt'> 
         
         
         <Form onSubmit={(e) => { props.submitHandler(e, debt) }} >
-        <h1> Debt </h1>
-        <div className='container'>
-        <label>Credit Card {" "}
-        <Field
-            type='text'
-            className='input'
-            name='credit card'
-            placeholder='$ Credit Card'
-            onChange={changeHandler}/>
-                        
-            </label>
-        <label>Personal Loan {" "}
-        <Field
-            className='input'
-            type='text'
-            name='Personal Loan'
-            placeholder='$ Personal Loan'
-            onChange={changeHandler}/>
-                        
-            </label>
-        <label> Car Loan {" "}
-        <Field
-            className='input'
-            type='text'
-            name='Personal Loan'
-            placeholder='$ Car Loan'
-            onChange={changeHandler}/>
-                        
-            </label>
-        
-        <label> Mortgage {" "}
-        <Field
-            className='input'
-            type='text'
-            name='Mortgage'
-            placeholder='$ Mortgage'
-            onChange={changeHandler}/>
-                        
-            </label>
-        <label>student loans {" "}
-        <Field
-            type='text'
-            className='input'
-            name='Student loans'
-            placeholder='$ Student Loans'
-            onChange={changeHandler}/>
-            </label>
-            <label> Other {" "}
-            <Field
-            className='input'
-            type='text'
-            name='other'
-            placeholder='$ other'
-            onChange={changeHandler}/>
-                        
-            </label>
             
+            <div className='container'>
+                    <h1> Debt </h1>
+                <label>Credit Card {" "}
+                    <Field
+                    type='text'
+                    className='input'
+                    name='credit card'
+                    placeholder='$ Credit Card'
+                    onChange={changeHandler}/>
+                                
+                </label>
+                <label>Personal Loan {" "}
+                    <Field
+                    className='input'
+                    type='text'
+                    name='Personal Loan'
+                    placeholder='$ Personal Loan'
+                    onChange={changeHandler}/>
+                                
+                </label>
+                <label> Car Loan {" "}
+                    <Field
+                    className='input'
+                    type='text'
+                    name='Personal Loan'
+                    placeholder='$ Car Loan'
+                    onChange={changeHandler}/>
+                                
+                </label>
+                
+                <label> Mortgage {" "}
+                    <Field
+                    className='input'
+                    type='text'
+                    name='Mortgage'
+                    placeholder='$ Mortgage'
+                    onChange={changeHandler}/>
+                                
+                </label>
+                <label>student loans {" "}
+                    <Field
+                    type='text'
+                    className='input'
+                    name='Student loans'
+                    placeholder='$ Student Loans'
+                    onChange={changeHandler}/>
+                    </label>
+                    <label> Other {" "}
+                    <Field
+                    className='input'
+                    type='text'
+                    name='other'
+                    placeholder='$ other'
+                    onChange={changeHandler}/>
+                                
+                </label>
+                <button> NEXT </button>
             </div>
-                <h4> NEXT </h4>
-                <h1>total Cost is $0</h1> 
-            </Form>
-        </Formik>
+        </Form>
+    </Formik>
     )
 }
 
