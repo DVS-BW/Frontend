@@ -6,15 +6,15 @@ import styled from 'styled-components';
 // import Header from './components/Header/header';
 
 import Nav from './components/Nav/nav';
-import { calcDebtAC } from './actions';
 import HealthCosts from './components/Health/health';
 // import Debt from './components/Debt/debt';
 import FoodCosts from './components/Food/food';
 import SecurityCosts from './components/Security/security';
 import TransCosts from './components/Transportation/transportation';
+import Debt from './components/Debt/debt';
 
 
-import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC } from './actions';
+import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC } from './actions';
 
 
 
@@ -61,6 +61,9 @@ const App = props => {
     else if (item.isTransEditing === true) {
       props.calcTransAC(item);
     }
+    else if (item.isDebtEditing === true) {
+      props.calcDebtAC(item);
+    }
   }
 
   return (
@@ -91,6 +94,8 @@ const App = props => {
       <TransCosts 
       submitHandler={submitHandler} />
 
+      <Debt submitHandler={submitHandler} />
+
     <div>
       <Total>Total cost is ${props.totalCost}.</Total>
       {/* <div>{props.obj.monthly_security} {props.obj.phone_change}</div> */}
@@ -114,5 +119,5 @@ const mapStateToProps = state => {
 //Connect will join this component with the state from Redux.
 export default connect(
   mapStateToProps,
-  {calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC }
+  {calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC }
   )(App);

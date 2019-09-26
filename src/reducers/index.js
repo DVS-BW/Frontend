@@ -1,4 +1,4 @@
-import { CALC_SECURITY, CALC_HEALTH, CALC_FOOD, CALC_TRANSPORTATION  } from "../actions";
+import { CALC_SECURITY, CALC_HEALTH, CALC_FOOD, CALC_TRANSPORTATION, CALC_DEBT  } from "../actions";
 
 
 export const initialState = {
@@ -28,6 +28,15 @@ export const initialState = {
         utilities: 0,
         moving: 0,
         isTransEditing: false
+    },
+    debt: {
+        credit_card: 0,
+        personal_loan: 0,
+        car_loan: 0,
+        mortgage: 0,
+        student_loans: 0,
+        other: 0,
+        isDebtEditing: false
     }
 }
 
@@ -84,6 +93,21 @@ export const reducer = (state = initialState, action) => {
                     }
                 }
 
+            case CALC_DEBT:
+                console.log('made it to reducer', action.payload)
+                return {
+                    ...state,
+                    totalCost: state.totalCost + action.payload.credit_card + action.payload.personal_loan + action.payload.car_loan + action.payload.mortgage + action.payload.student_loans + action.payload.other,
+                    debt: {
+                        credit_card: action.payload.credit_card,
+                        personal_loan: action.payload.personal_loan,
+                        car_loan: action.payload.car_loan,
+                        mortgage: action.payload.mortgage,
+                        student_loans: action.payload.student_loans,
+                        other: action.payload.other,
+                        isDebtEditing: false
+                    }
+                }
         default: 
         return state;
     }
