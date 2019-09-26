@@ -93,9 +93,9 @@ function Debt(props) {
                         
             </label>
             
-            </div>
+           
                 <button type='submit' className='submitBTN'>Next</button>
-
+                </div>
             </Form>
         </Formik>
     )

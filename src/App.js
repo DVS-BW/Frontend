@@ -4,15 +4,15 @@ import './App.scss';
 import styled from 'styled-components';
 // import * as Tabs from './Components/Tabs/tabs.js'
 // import Header from './components/Header/header';
-import Footer from './components/Footer/footer';
+import Footer from './Components/Footer/footer';
 
-import Nav from './components/Nav/nav';
-import HealthCosts from './components/Health/health';
+import Nav from './Components/Nav/nav';
+import HealthCosts from './Components/Health/health';
 // import Debt from './components/Debt/debt';
-import FoodCosts from './components/Food/food';
-import SecurityCosts from './components/Security/security';
-import TransCosts from './components/Transportation/transportation';
-import Debt from './components/Debt/debt';
+import FoodCosts from './Components/Food/food';
+import SecurityCosts from './Components/Security/security';
+import TransCosts from './Components/Transportation/transportation';
+import Debt from './Components/Debt/debt';
 
 
 import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC } from './actions';
