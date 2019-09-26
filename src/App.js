@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './App.scss';
 import styled from 'styled-components';
-// import * as Tabs from './Components/Tabs/tabs.js'
+import SimpleTabs from './Components/Tabs/tabs.js'
 // import Header from './components/Header/header';
 import Footer from './Components/Footer/footer';
 
@@ -38,10 +38,11 @@ const Total=styled.h1`
 `
 const MainStyles = styled.div`
     background:white;
-    color:#800080;
+    color:#fac8c8;
     font-family:sans-serif;
-    font-size:2rem;
-    border: 1px solid green;
+    font-size:1rem;
+    padding:25px;
+    margin:0 auto;
 `
 
 
@@ -70,24 +71,16 @@ const App = props => {
   return (
     <MainStyles>
     <div className="App">
-
-      {/* <Tabs/> */}
-      
-
-
       {/* <Header /> */}
-      <Nav />
+      <Nav/>
 
+      <SimpleTabs/>
 
-      
+      {/* <FoodCosts 
+      submitHandler={submitHandler}/> */}
 
-      <FoodCosts 
-      submitHandler={submitHandler}/>
-
- 
-
-      <HealthCosts
-      submitHandler={submitHandler}/>
+      {/* <HealthCosts
+      submitHandler={submitHandler}/> 
 
       <SecurityCosts 
       submitHandler={submitHandler} />
@@ -95,7 +88,7 @@ const App = props => {
       <TransCosts 
       submitHandler={submitHandler} />
 
-      <Debt submitHandler={submitHandler} />
+      <Debt submitHandler={submitHandler} /> */}
 
     <div>
       <Total>Total cost is ${props.totalCost}.</Total>
