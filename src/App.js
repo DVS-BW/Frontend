@@ -12,7 +12,7 @@ import HealthCosts from './Components/Health/health';
 import FoodCosts from './Components/Food/food';
 import SecurityCosts from './Components/Security/security';
 import TransCosts from './Components/Transportation/transportation';
-import Debt from './Components/Debt/debt';
+import Debt from '../src/Components/Debt/debt';
 
 
 import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC } from './actions';
