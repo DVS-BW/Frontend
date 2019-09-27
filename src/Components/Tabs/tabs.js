@@ -6,13 +6,15 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-
+import styled from 'styled-components';
 // imports for components
 import HealthCosts from '../Health/health';
 import FoodCosts from '../Food/food';
 import SecurityCosts from '../Security/security';
 import TransCosts from '../Transportation/transportation';
 import Debt from '../Debt/debt';
+import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC } from '../../actions';
+import {connect} from 'react-redux';
 
 
 function TabPanel(props) {
@@ -31,6 +33,14 @@ function TabPanel(props) {
     </Typography>
   );
 }
+const Total=styled.h1`
+    height:150px;
+    display:flex;
+    justify-content:center;
+    padding-top:75px;
+    font-size:2.5rem;
+    font-family:sans-serif;
+`
 
 TabPanel.propTypes = {
   children: PropTypes.node,
@@ -53,34 +63,34 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export function SimpleTabs() {
+const SimpleTabs = props => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const App = props => {
-  
-    const submitHandler = (e, item) => {
-      console.log('made it to SubmitHandler', item)
-      e.preventDefault();
-      if (item.isHealthEditing === true ) {
-        props.calcHealthAC(item);
-      }
-      else if (item.isSecurityEditing === true) {
-        props.calcSecurityAC(item);
-      }
-      else if (item.isFoodEditing === true) {
-        props.calcFoodAC(item);
-      }
-      else if (item.isTransEditing === true) {
-        props.calcTransAC(item);
-      }
-      else if (item.isDebtEditing === true) {
-        props.calcDebtAC(item);
-      }
+
+
+  const submitHandler = (e, item) => {
+    console.log('made it to SubmitHandler', item)
+    e.preventDefault();
+    if (item.isHealthEditing === true ) {
+      props.calcHealthAC(item);
     }
+    else if (item.isSecurityEditing === true) {
+      props.calcSecurityAC(item);
+    }
+    else if (item.isFoodEditing === true) {
+      props.calcFoodAC(item);
+    }
+    else if (item.isTransEditing === true) {
+      props.calcTransAC(item);
+    }
+    else if (item.isDebtEditing === true) {
+      props.calcDebtAC(item);
+    }
+  }
   
 
   return (
@@ -121,17 +131,21 @@ export function SimpleTabs() {
       <TabPanel value={value} index={4}>
       <Debt submitHandler={submitHandler} />
       </TabPanel>
+      <Total>Total cost is ${props.totalCost}.</Total>
     </div>
-  )
-  }};
-  const mapStateToProps = state => {
-    return {
-      totalCost: state.totalCost,
-      obj: state.security
-    }
+  );
   }
 
-  export default connect(
-    mapStateToProps,
-    {calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC }
-    )(App);
+//Helper function that tells connector (below) which pieces of state we need.
+const mapStateToProps = state => {
+  return {
+    totalCost: state.totalCost,
+    obj: state.security
+  }
+}
+
+//Connect will join this component with the state from Redux.
+export default connect(
+  mapStateToProps,
+  {calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC }
+  )(SimpleTabs);

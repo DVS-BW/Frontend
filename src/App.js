@@ -1,15 +1,10 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import './App.scss';
 import styled from 'styled-components';
 import SimpleTabs from './Components/Tabs/tabs.js'
 // import Header from './components/Header/header';
 import Footer from './Components/Footer/footer';
 import Nav from './Components/Nav/nav';
-
-
-
-import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC } from './actions';
 
 
 
@@ -22,14 +17,6 @@ import { calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC } fro
 
 // styles
 
-const Total=styled.h1`
-    height:150px;
-    display:flex;
-    justify-content:center;
-    padding-top:75px;
-    font-size:2.5rem;
-    font-family:sans-serif;
-`
 const MainStyles = styled.div`
     background:white;
     color:#fac8c8;
@@ -71,7 +58,7 @@ const App = props => {
       <SimpleTabs/>
 
     <div>
-      <Total>Total cost is ${props.totalCost}.</Total>
+      
       {/* <div>{props.obj.monthly_security} {props.obj.phone_change}</div> */}
     </div>
 
@@ -81,17 +68,4 @@ const App = props => {
     </MainStyles>
   );
 }
-
-//Helper function that tells connector (below) which pieces of state we need.
-const mapStateToProps = state => {
-  return {
-    totalCost: state.totalCost,
-    obj: state.security
-  }
-}
-
-//Connect will join this component with the state from Redux.
-export default connect(
-  mapStateToProps,
-  {calcSecurityAC, calcHealthAC, calcFoodAC, calcTransAC, calcDebtAC }
-  )(App);
+export default App;
