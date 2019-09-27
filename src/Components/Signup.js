@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 const Signup = props => {
 
@@ -15,11 +16,9 @@ const Signup = props => {
 
     const signupHandler = e => {
         e.preventDefault();
-        axios.post('https://dvs-bw-lambda.herokuapp.com/api/auth/register', credentials)
+        axiosWithAuth().post('https://dvs-bw-lambda.herokuapp.com/api/auth/register', credentials)
       .then(res => {
           console.log('Logged in result', res);
-        // localStorage.setItem('token', res.data.payload);
-        props.history.push('/');
       })
       .catch(err => {
         console.log(err)

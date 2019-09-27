@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Form, Field, Formik } from 'formik';
 import {connect} from 'react-redux';
 import axios from 'axios';
-// import * as Yup from 'yup';
 
 
 function Debt(props) {
@@ -37,10 +36,9 @@ function Debt(props) {
     return (
         <Formik className='debt'> 
         <Form onSubmit={(e) => { props.submitHandler(e, debt) }} >
-        <h1> Debt </h1>
-
+        
         <div className='container'>
-
+        <h4>Debt Expenses</h4>
         <label>Credit Card {" "}
         <Field
             type='text'

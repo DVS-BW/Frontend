@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import {Formik, Form, Field} from 'formik';
 import styled from 'styled-components';
-import * as Yup from 'yup';
 
-const DVtheme = {
-    primary:'#800080',
-    secondary:'white',
-    third:'#2D182E',
-}
+// const DVtheme = {
+//     primary:'#800080',
+//     secondary:'white',
+//     third:'#2D182E',
+// }
 
 
 const Wrapper=styled.div`
@@ -105,7 +104,7 @@ const FoodCosts = props => {
                     onChange={changeHandler}/>
                 </Input> 
                 </Formcard>    
-                <Btn type='submit'>Next</Btn>
+                <Btn type='submit' onClick={(e) => {props.handleChange(e, 1)}}>Next</Btn>
                 
                 </Formcard>
             </Wrapper>

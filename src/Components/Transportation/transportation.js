@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import {Form, Field, Formik} from 'formik';
 import styled from 'styled-components';
 
-const DVtheme = {
-    primary:'#800080',
-    secondary:'white',
-    third:'#2D182E',
-}
+// const DVtheme = {
+//     primary:'#800080',
+//     secondary:'white',
+//     third:'#2D182E',
+// }
 
 
 const Wrapper=styled.div`
@@ -112,7 +112,7 @@ const TransCosts = props => {
                     </Input>
 
 
-                    <Btn type='submit' className='submitBTN'>Next</Btn>
+                    <Btn type='submit' className='submitBTN' onClick={(e) => {props.handleChange(e, 4)}}>Next</Btn>
                 </Formcard>            
             </Wrapper>
             
