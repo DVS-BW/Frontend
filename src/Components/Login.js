@@ -19,17 +19,18 @@ const Login = props => {
         e.preventDefault();
         axiosWithAuth().post('https://dvs-bw-lambda.herokuapp.com/api/auth/login', credentials)
         .then(res => {
-          localStorage.setItem('token', res.data.payload);
+          localStorage.setItem('token', res.data.token);
+          localStorage.setItem('userId', res.data.user.id);
           props.history.push('/');
-        console.log('Logged in! Result', res);
+        console.log('Logged in! Result', res.data.token);
       })
-      // .then(res => {
-      //   axios.get('https://dvs-bw-lambda.herokuapp.com/api/calc')
-      //   .then(res => {
-      //     console.log(res);
-      //     props.getSessionAC();
-      //   })
-      // })
+      .then(res => {
+        axiosWithAuth().get('https://dvs-bw-lambda.herokuapp.com/api/calc')
+        .then(res => {
+          console.log("Got this from the server", res);
+          props.getSessionAC(res);
+        })
+      })
       .catch(err => {
         console.log(err)
       })
