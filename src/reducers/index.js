@@ -119,8 +119,10 @@ export const reducer = (state = initialState, action) => {
                 }
             } 
             else {
+                console.log('Updating state for the logged in user: ', action.payload.data.payload)
+                console.log('Previous state was: ', state);
                 return {
-                    state: action.payload
+                    state: action.payload.data.payload
                     }
             }
 
