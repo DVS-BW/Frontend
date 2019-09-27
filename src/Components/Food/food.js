@@ -105,7 +105,7 @@ const FoodCosts = props => {
                     onChange={changeHandler}/>
                 </Input> 
                 </Formcard>    
-                <Btn type='submit'>Next</Btn>
+                <Btn type='submit'>NEXT</Btn>
                 
                 </Formcard>
             </Wrapper>

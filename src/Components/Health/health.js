@@ -67,11 +67,11 @@ const HealthCosts = props => {
 
     return (
         <Formik>
-            <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}}>
+            <Form onSubmit={(e) => {props.submitHandler(e, healthCost)}} >
 
 
 
-                <Wrapper className='Health-Costs'>
+                <Wrapper className='Health-Costs' id='health'>
                     <h4>Health Expenses</h4>
                     <Formcard className='Health-Form'>
                     <Input> Monthly Health Expenses: 

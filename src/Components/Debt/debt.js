@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Field, Formik } from 'formik';
 import {connect} from 'react-redux';
 import axios from 'axios';
+
 // import * as Yup from 'yup';
 
 
@@ -33,7 +34,7 @@ function Debt(props) {
             console.log('Sorry but you have to be logged in!', err)
         })
     }
-
+    
     return (
         <Formik className='debt'> 
         <Form onSubmit={(e) => { props.submitHandler(e, debt) }} >
@@ -105,9 +106,7 @@ function Debt(props) {
             onChange={changeHandler}/>
                         
             </label>
-            
-           
-                <button type='submit' className='submitBTN' onClick={sendData}>Submit</button>
+               <button type='submit' className='submitBTN' onClick={sendData}>Submit</button>
                 </div>
             </Form>
         </Formik>

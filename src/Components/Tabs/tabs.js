@@ -93,16 +93,18 @@ const submitHandler = (e, item) => {
     }
   }
   
-
+  
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="DVS calculator">
+        
           <Tab label="Food" {...a11yProps(0)} />
           <Tab label="Health" {...a11yProps(1)} />
           <Tab label="Security" {...a11yProps(2)} />
           <Tab label="Transportation" {...a11yProps(3)} />
           <Tab label="Debt" {...a11yProps(4)} />
+          
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
