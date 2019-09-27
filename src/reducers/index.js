@@ -43,6 +43,7 @@ export const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
+
         case CALC_FOOD: 
         console.log(state);
         return {
@@ -110,10 +111,19 @@ export const reducer = (state = initialState, action) => {
                     }
                 }
 
-            // case GET_SESSION_DATA:
-            //     return {
+            case GET_SESSION_DATA:
+            console.log(action)   
+            if (action.payload.data == null) {
+                return {
+                    ...state
+                }
+            } 
+            else {
+                return {
+                    state: action.payload
+                    }
+            }
 
-            //     }
         default: 
         return state;
     }

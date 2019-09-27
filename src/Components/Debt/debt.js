@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Field, Formik } from 'formik';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import axiosWithAuth from '../../utils/axiosWithAuth';
 
 
 function Debt(props) {
@@ -23,7 +24,12 @@ function Debt(props) {
 
     const sendData = () => {
         console.log(props.state);
-        axios.put('https://dvs-bw-lambda.herokuapp.com/api/calc', props.state)
+        const dataToSend = {
+            payload: props.state,
+            id: parseInt(localStorage.getItem('userId'))
+        }
+        console.log(dataToSend);
+        axiosWithAuth().put('https://dvs-bw-lambda.herokuapp.com/api/calc', dataToSend)
         .then(res => {
             console.log('Data was saved successfully. Result', res);
             props.history.push('/');
@@ -103,8 +109,8 @@ function Debt(props) {
                         
             </label>
             
-           
-                <button type='submit' className='submitBTN' onClick={sendData}>Submit</button>
+                <button type='submit' className='submitBTN'>Save</button>
+                <button type='button' className='submitBTN' onClick={sendData}>Submit</button>
                 </div>
             </Form>
         </Formik>
