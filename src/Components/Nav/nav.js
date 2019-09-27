@@ -8,7 +8,7 @@ const Nav = () => {
         <Router>
         <div className='navbar'>
             <div>
-                LOGO
+                Calculator Resource for Domestic Violence Survivors 
             </div>
             <ul>
                 <Link to="/login"><li>Log In</li></Link>
