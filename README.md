@@ -19,3 +19,10 @@ Target Audience:
 
 Planning documentation:
 To see our planning document please visit this [page](https://docs.google.com/document/d/1p_oyvecE0_MNN43L-Xm-m9oOVzWTafHIruLzPuLORx8/edit#)
+
+
+To start:
+-Fork your own copy
+-open it up by cloning into your terminal
+-install your dependencies with yarn
+-yarn start
