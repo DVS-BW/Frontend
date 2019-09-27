@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, Link} from 'react';
 import {Formik, Form, Field} from 'formik';
 import styled from 'styled-components';
+
 
 // const DVtheme = {
 //     primary:'#800080',
@@ -50,6 +51,8 @@ const Btn =styled.button`
 const FoodCosts = props => {
 
     const [foodCost, setFoodCost]=useState({});
+
+    
 
     const changeHandler = event => {
         let val = parseFloat(event.target.value);
@@ -104,8 +107,9 @@ const FoodCosts = props => {
                     onChange={changeHandler}/>
                 </Input> 
                 </Formcard>    
+
                 <Btn type='submit' onClick={(e) => {props.handleChange(e, 1)}}>Next</Btn>
-                
+             
                 </Formcard>
             </Wrapper>
             
