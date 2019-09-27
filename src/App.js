@@ -38,7 +38,7 @@ const App = props => {
 
       <SimpleTabs/>
 
-
+      <Footer />
     </div>
     </MainStyles>
   );
