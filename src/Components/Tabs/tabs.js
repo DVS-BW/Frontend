@@ -34,10 +34,10 @@ function TabPanel(props) {
   );
 }
 const Total=styled.h1`
-    height:150px;
+    height: 20px;
     display:flex;
     justify-content:center;
-    padding-top:75px;
+    padding-top:15px;
     font-size:2.5rem;
     font-family:sans-serif;
 `
@@ -71,9 +71,9 @@ const SimpleTabs = props => {
     setValue(newValue);
   };
 
+//Add a new Action --> after a successful log-in, push the new data into Redux to replace InitialState.
 
-  const submitHandler = (e, item) => {
-    console.log('made it to SubmitHandler', item)
+const submitHandler = (e, item) => {
     e.preventDefault();
     if (item.isHealthEditing === true ) {
       props.calcHealthAC(item);
@@ -104,34 +104,38 @@ const SimpleTabs = props => {
           <Tab label="Debt" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
+
+      
+      <Total>Total cost is ${props.totalCost}.</Total>
+      
       <TabPanel value={value} index={0}>
-        Food 
+         
         <FoodCosts 
-      submitHandler={submitHandler}/>
+      submitHandler={submitHandler} handleChange={handleChange}  setValue={setValue}/>
       </TabPanel>
 
       <TabPanel value={value} index={1}>
-        Health
+        
         <HealthCosts
-      submitHandler={submitHandler}/>
+      submitHandler={submitHandler} handleChange={handleChange} setValue={setValue}/>
       </TabPanel>
 
       <TabPanel value={value} index={2}>
-        Security
+        
         <SecurityCosts 
-      submitHandler={submitHandler} />
+      submitHandler={submitHandler} handleChange={handleChange}/>
       </TabPanel>
 
       <TabPanel value={value} index={3}>
-        Transportation
+        
         <TransCosts 
-      submitHandler={submitHandler} />
+      submitHandler={submitHandler} handleChange={handleChange}/>
       </TabPanel>
 
       <TabPanel value={value} index={4}>
-      <Debt submitHandler={submitHandler} />
+      <Debt submitHandler={submitHandler} handleChange={handleChange}/>
       </TabPanel>
-      <Total>Total cost is ${props.totalCost}.</Total>
+      
     </div>
   );
   }
