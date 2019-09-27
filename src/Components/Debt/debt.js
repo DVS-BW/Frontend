@@ -23,19 +23,19 @@ function Debt(props) {
     }
 
     const sendData = () => {
-        console.log(props.state);
-        const dataToSend = {
-            payload: props.state,
-            id: parseInt(localStorage.getItem('userId'))
-        }
-        console.log(dataToSend);
-        axiosWithAuth().put('https://dvs-bw-lambda.herokuapp.com/api/calc', dataToSend)
+        // console.log(props.state);
+        // const dataToSend = {
+        //     payload: props.state,
+        //     id: parseInt(localStorage.getItem('userId'))
+        // }
+        // console.log(dataToSend);
+        axiosWithAuth().put('https://cors-anywhere.herokuapp.com/https://dvs-bw-lambda.herokuapp.com/api/calc', props.state)
         .then(res => {
-            console.log('Data was saved successfully. Result', res);
-            props.history.push('/');
+            console.log('Data was saved successfully. Result', res.data);
+            // props.history.push('/');
         })
         .catch(err => {
-            console.log('Sorry but you have to be logged in!', err)
+            console.log("Data was not saved: ", err)
         })
     }
 
